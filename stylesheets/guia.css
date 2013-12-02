@@ -1,0 +1,169 @@
+/* line 2, ../compass/sass/guia.scss */
+.cuadro {
+  display: inline-block;
+  width: 68px;
+  height: 40px;
+  border: solid #efefef 4px;
+}
+/* line 7, ../compass/sass/guia.scss */
+.cuadro:after {
+  display: inline-block;
+  height: 20px;
+  font-size: 20px;
+  width: 100%;
+  margin-top: 50px;
+  text-align: center;
+}
+
+/* line 16, ../compass/sass/guia.scss */
+#p1 {
+  background-color: #006fa6;
+}
+/* line 18, ../compass/sass/guia.scss */
+#p1:after {
+  content: "#006fa6";
+}
+
+/* line 24, ../compass/sass/guia.scss */
+#p2 {
+  background-color: #00aeef;
+}
+/* line 26, ../compass/sass/guia.scss */
+#p2:after {
+  content: "#00aeef";
+}
+
+/* line 32, ../compass/sass/guia.scss */
+#p3 {
+  background-color: #136993;
+}
+/* line 34, ../compass/sass/guia.scss */
+#p3:after {
+  content: "#136993";
+}
+
+/* line 40, ../compass/sass/guia.scss */
+#p4 {
+  background-color: #3c99bc;
+}
+/* line 42, ../compass/sass/guia.scss */
+#p4:after {
+  content: "#3c99bc";
+}
+
+/* line 48, ../compass/sass/guia.scss */
+#p5 {
+  background-color: #bd177f;
+}
+/* line 50, ../compass/sass/guia.scss */
+#p5:after {
+  content: "#bd177f";
+}
+
+/* line 56, ../compass/sass/guia.scss */
+#p6 {
+  background-color: #ff39b5;
+}
+/* line 58, ../compass/sass/guia.scss */
+#p6:after {
+  content: "#ff39b5";
+}
+
+/* line 64, ../compass/sass/guia.scss */
+#p7 {
+  background-color: #c82222;
+}
+/* line 66, ../compass/sass/guia.scss */
+#p7:after {
+  content: "#c82222";
+}
+
+/* line 72, ../compass/sass/guia.scss */
+#p8 {
+  background-color: #ff4c4c;
+}
+/* line 74, ../compass/sass/guia.scss */
+#p8:after {
+  content: "#ff4c4c";
+}
+
+/* line 80, ../compass/sass/guia.scss */
+#p9 {
+  background-color: #fe6500;
+}
+/* line 82, ../compass/sass/guia.scss */
+#p9:after {
+  content: "#fe6500";
+}
+
+/* line 88, ../compass/sass/guia.scss */
+#p10 {
+  background-color: #fe9e00;
+}
+/* line 90, ../compass/sass/guia.scss */
+#p10:after {
+  content: "#fe9e00";
+}
+
+/* line 96, ../compass/sass/guia.scss */
+#p11 {
+  background-color: #307701;
+}
+/* line 98, ../compass/sass/guia.scss */
+#p11:after {
+  content: "#307701";
+}
+
+/* line 104, ../compass/sass/guia.scss */
+#p12 {
+  background-color: #48b600;
+}
+/* line 106, ../compass/sass/guia.scss */
+#p12:after {
+  content: "#48b600";
+}
+
+/* line 112, ../compass/sass/guia.scss */
+#p13 {
+  background-color: #004f80;
+}
+/* line 114, ../compass/sass/guia.scss */
+#p13:after {
+  content: "#004f80";
+}
+
+/* line 120, ../compass/sass/guia.scss */
+#p14 {
+  background-color: #404040;
+}
+/* line 122, ../compass/sass/guia.scss */
+#p14:after {
+  content: "#404040";
+}
+
+/* line 128, ../compass/sass/guia.scss */
+#p15 {
+  background-color: #666666;
+}
+/* line 130, ../compass/sass/guia.scss */
+#p15:after {
+  content: "#666666";
+}
+
+/* line 136, ../compass/sass/guia.scss */
+#p16 {
+  background-color: gray;
+}
+/* line 138, ../compass/sass/guia.scss */
+#p16:after {
+  content: "gray";
+}
+
+/* line 144, ../compass/sass/guia.scss */
+#p17 {
+  background-color: white;
+}
+/* line 146, ../compass/sass/guia.scss */
+#p17:after {
+  content: "white";
+}

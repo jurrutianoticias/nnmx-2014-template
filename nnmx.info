@@ -1,0 +1,26 @@
+name = Nnmx
+description = Tema responsive para el portal <a href="http://www.noticiasnet.mx">Noticias Voz e Imagen</a>
+project = "nnmx"
+version = 7.x-0.1
+core = 7.x
+engine = phptemplate
+
+regions[blk_skycrapper] = blk skycrapper
+regions[blk_up] = blk up
+regions[content] = Content
+regions[left_sidebar] = left sidebar
+regions[right_sidebar] = right sidebar
+regions[blk_middle_pub] = blk middle pub
+regions[blk_row_1] = blk row 1
+regions[blk_row_2] = blk row 2
+regions[blk_row_3] = blk row 3
+regions[blk_footer] = blk footer
+
+scripts[] = plugins/jquery.hoverIntent.minified.js
+scripts[] = plugins/flexnav/js/jquery.flexnav.min.js
+scripts[] = js/main.js
+
+stylesheets[screen][] = stylesheets/screen.css
+stylesheets[print][] = stylesheets/print.css
+stylesheets-conditional[lt IE 9][] = stylesheets/ie8.css
+

@@ -1,0 +1,17 @@
+//variables set layout
+
+$containerWidth: 1024px;
+$rowWidth: 5.5; //tamaño de columna
+$columns: 12; //numero de columnas
+$gutter: (100 - ($rowWidth * $columns)) / ($columns - 1);
+
+
+@mixin topContainer() {
+  width: $containerWidth;
+  margin: auto;
+}
+
+.top-container {
+  @include topContainer();
+
+}
