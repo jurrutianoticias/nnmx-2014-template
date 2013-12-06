@@ -1,151 +1,100 @@
 @import "partials/variables";
+@import "partials/functions";
+@import "partials/mixins";
+@import "compass/utilities/general/clearfix";
+
+body {
+	font-size: $baseFontSize + px;
+}
+h1 {
+	@include h1();
+}
+h2 {
+	@include h2();
+}
+h3 {
+	@include h3();
+}
 .cuadro {
+	color: #333;
 	display: inline-block;
 	width: 68px;
 	height: 40px;
 	border: solid #efefef 4px;
+	margin-bottom: 50px;
 	&:after {
-		display: inline-block;
+		display: block;
 		height: 20px;
-		font-size: 20px;
+		font-size: 16px;
 		width: 100%;
 		margin-top: 50px;
 		text-align: center;
 	}
-}
-#p1 {
-	background-color: $p1;
-	&:after {
-
-		content: "#{$p1}";
-
+	&:before {
+		display: block;
+		height: 20px;
+		font-size: 18px;
+		width: 100%;
+		text-align: center;
+		margin-top: -25px;
 	}
 }
-#p2 {
-	background-color: $p2;
+@for $i from 1 through length($colores) {
+  .p#{$i} {
+    background-color: getColor($i);
 	&:after {
 
-		content: "#{$p2}";
+		content: "#{getColor($i)}";
 
 	}
-}
-#p3 {
-	background-color: $p3;
-	&:after {
+	&:before {
 
-		content: "#{$p3}";
+		content: "id" + $i;
 
 	}
+  }
 }
-#p4 {
-	background-color: $p4;
-	&:after {
 
-		content: "#{$p4}";
-
+.secciones{
+	@include pie-clearfix;
+	div{
+		float:left;
+		border: solid 4px #efefef;
+		margin: 2px;
+		padding: 2px;
 	}
 }
-#p5 {
-	background-color: $p5;
-	&:after {
-
-		content: "#{$p5}";
-
-	}
-}
-#p6 {
-	background-color: $p6;
-	&:after {
-
-		content: "#{$p6}";
-
-	}
-}
-#p7 {
-	background-color: $p7;
-	&:after {
-
-		content: "#{$p7}";
-
-	}
-}
-#p8 {
-	background-color: $p8;
-	&:after {
-
-		content: "#{$p8}";
-
-	}
-}
-#p9 {
-	background-color: $p9;
-	&:after {
-
-		content: "#{$p9}";
-
-	}
-}
-#p10 {
-	background-color: $p10;
-	&:after {
-
-		content: "#{$p10}";
-
-	}
-}
-#p11 {
-	background-color: $p11;
-	&:after {
-
-		content: "#{$p11}";
-
-	}
-}
-#p12 {
-	background-color: $p12;
-	&:after {
-
-		content: "#{$p12}";
-
-	}
-}
-#p13 {
-	background-color: $p13;
-	&:after {
-
-		content: "#{$p13}";
-
-	}
-}
-#p14 {
-	background-color: $p14;
-	&:after {
-
-		content: "#{$p14}";
-
-	}
-}
-#p15 {
-	background-color: $p15;
-	&:after {
-
-		content: "#{$p15}";
-
-	}
-}
-#p16 {
-	background-color: $p16;
-	&:after {
-
-		content: "#{$p16}";
-
-	}
-}
-#p17 {
-	background-color: $p17;
-	&:after {
-
-		content: "#{$p17}";
-
+.tipografia{
+	@include pie-clearfix;
+	div{
+		float:left;
+		border: solid 4px #efefef;
+		margin: 2px;
+		padding: 2px;
+		pre {
+			font-size: 2em;
+		}
+		.sh1d {
+			@include sh1;
+			display: block;
+			background-color: getColor(18);
+		}
+		.sh1l {
+			@include sh1(light);
+			display: block;
+			background-color: getColor(16);
+		}
+		.sh2n {
+			@include sh2;
+			display: block;
+		}
+		.sh2d {
+			@include sh2(destacado);
+			display: block;
+		}
+		.sh2b {
+			@include sh2(bold);
+			display: block;
+		}
 	}
 }

@@ -1,0 +1,136 @@
+//mixin para escribir font-size en REM con legacy sopport
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * $baseFontSize) + px;
+  font-size: $sizeValue + rem;
+}
+
+
+//calculo de tamaños en rems con legacy support recibe 2 parametros la propiedad y el valor
+@mixin rems($propiedad, $valor) {
+	#{$propiedad}: ($valor * $baseFontSize) + px;
+	#{$propiedad}: $valor + rem;
+}
+
+
+/**
+*Apartado de tipografias definidas para el sitio
+**/
+
+//heading principal (h1) de las secciones el parametro puede tener valor light o dark 
+
+@mixin sh1($sel: dark) {
+	font-family: Arial;
+	font-weight: bold;
+	@include font-size(1);
+	@if $sel == dark {
+		color: getColor(16);
+	} @else if $sel == light {
+		color: getColor(21);
+	}
+
+}
+
+@mixin sh2($sel: normal) {
+	font-family: "Times New Roman";
+	color: getColor(13);
+	@if $sel == normal{
+		@include font-size(1.3);
+	} @else if $sel == destacado {
+		@include font-size(1.8);
+	} @else if $sel == bold {
+		font-weight: bold;
+		@include font-size(1.1);
+	}
+	a {
+		text-decoration: none;
+		color: inherit;
+		&:hover {
+			color: getColor(2);
+		}
+	}
+}
+
+//tipografias para el menu
+@mixin tm($id: top) {
+	font-family: Arial;
+	font-weight: bold;
+	@include font-size(1.2);
+	color: getColor(15);
+	@if $id == top {
+		@include rems(line-height, 4);
+		text-transform: uppercase;
+	} @else if $id == submenu {
+		@include rems(line-height, 3.5);
+		text-transform: capitalize;
+	}
+
+}
+@mixin h1() {
+	font-family: "Times New Roman";
+	@include font-size(3.5);
+	color: getColor(13);
+}
+
+@mixin h2 {
+	font-family: "Times New Roman";
+	font-size: 2.6em;
+	color: getColor(13);
+}
+
+@mixin h3 {
+	font-family: Arial;
+	font-size: 2.1em;
+	color: getColor(14);
+}
+
+
+/**
+* cambios de tema por seccion este mixin esta diseñado 
+* para recibir los 2 colores del tema como parametros 
+* ya que las variaciones de cada seccion siempre son las mismas
+* por lo tanto con llamar este mixin en cada seccion con 
+* diferente combinacion de colores es suficiente.
+**/
+@mixin estiloSeccion($color1, $color2) {
+
+		//bloque skycrapper
+	.blk-skycrapper-wrapper {
+		background-color: getColor($color1);
+	}
+
+
+	//bloque header
+	.blk-header-wrapper {
+		background-color: getColor(19);
+		@include background-image(linear-gradient(getColor($color2), getColor($color2)), linear-gradient(getColor(18), getColor(18)));
+		background-repeat: repeat-x, repeat-x;
+		background-size: 100% 4em, 100% 0.1em;
+		background-position: 0 0, 0 16em;
+	}
+
+	//color iconos de la barra social
+	.social-header {
+	    a{
+	    	color: getColor(21);
+	    	&:hover {
+	    		color: getColor($color1);
+	    	}
+	    }
+	}
+
+
+	//colores del menu
+	#navigation{
+		&>ul{
+			&>li{
+				&:hover {
+					background-color: getColor($color2);
+					& > a {
+						color: getColor(21);
+					}
+				}
+			}
+		}
+	}
+
+}

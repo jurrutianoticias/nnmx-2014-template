@@ -1,10 +1,458 @@
-@import url(normalize.min.css);
+@charset "CP850";
 /* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 14, ../compass/sass/partials/_layout.scss */
-.top-container {
+.row {
   width: 1024px;
+  margin: 0 auto;
+  *zoom: 1;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+[class*="col"] {
+  float: left;
+  display: inline;
+  min-height: 1px;
+  position: relative;
+  margin-left: 2.54545%;
+}
+[class*="col"]:first-child {
+  margin-left: 0;
+}
+
+.col1 {
+  width: 6%;
+}
+
+.col2 {
+  width: 14.54545%;
+}
+
+.col3 {
+  width: 23.09091%;
+}
+
+.col4 {
+  width: 31.63636%;
+}
+
+.col5 {
+  width: 40.18182%;
+}
+
+.col6 {
+  width: 48.72727%;
+}
+
+.col7 {
+  width: 57.27273%;
+}
+
+.col8 {
+  width: 65.81818%;
+}
+
+.col9 {
+  width: 74.36364%;
+}
+
+.col10 {
+  width: 82.90909%;
+}
+
+.col11 {
+  width: 91.45455%;
+}
+
+.col12 {
+  width: 100%;
+}
+
+/**
+*Esta variable alberga la paleta de colores
+*hay que tomar en cuenta que el orden importa
+*si se quisiera cambiar un color ya que esta 
+*variable se utiliza a traves de una funcion 
+*llamada getColor (esta funcion se encuentra 
+*en el partial _functions.scss) que lleva como
+* parametro la la posicion del color en la lista.
+**/
+/**
+*tamaño base para toda la tipografia del sitio en pixeles, 
+*es importante no escribir px ya que con esta variable se 
+*realizan calculos para el resto de las tipografias
+**/
+/**
+*Apartado de tipografias definidas para el sitio
+**/
+/**
+* cambios de tema por seccion este mixin esta diseñado 
+* para recibir los 2 colores del tema como parametros 
+* ya que las variaciones de cada seccion siempre son las mismas
+* por lo tanto con llamar este mixin en cada seccion con 
+* diferente combinacion de colores es suficiente.
+**/
+/**
+* Los estilos se partiran en diferentes partials para mantener una mejor organizacion de los mismos 
+* aqui solo se llamaran esos partials en el orden especifico para que los estilos funcionen como deben de ser.
+**/
+/**
+*Este partial contiene los estilos generales del sitio
+**/
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: #faf9f5;
   margin: auto;
+  min-width: 1024px;
+  width: 100%;
+  font-size: 10px;
+}
+
+/**
+* Para mantener la coherencia en los archivos todos los tamaños
+* fijos de elementos que correspondan al layout seran declarados 
+* aqui dejando en los demas partials de seccion solo el cambio de
+* colores.
+**/
+#blk-skycrapper {
+  height: 105px;
+  height: 10.5rem;
+}
+
+.blk-header-wrapper {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-shadow: #e3e3e3 0px 5px 12px;
+  -moz-box-shadow: #e3e3e3 0px 5px 12px;
+  box-shadow: #e3e3e3 0px 5px 12px;
+}
+
+.social-header {
+  height: 40px;
+  height: 4rem;
+}
+.social-header a {
+  text-decoration: none;
+}
+.social-header a .logo-text {
+  margin-right: 600px;
+  margin-right: 60rem;
+  height: 40px;
+  height: 4rem;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 5px 0px;
+}
+.social-header a .social-icons {
+  font-size: 25px;
+  font-size: 2.5rem;
+  line-height: 25px;
+  line-height: 2.5rem;
+}
+
+#navigation {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: block;
+}
+#navigation > ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#navigation > ul > li {
+  display: block;
+  float: left;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 40px;
+  height: 4rem;
+}
+#navigation > ul > li a {
+  text-decoration: none;
+}
+#navigation > ul > li > a {
+  display: inline-block;
+  width: 75%;
+  height: 40px;
+  height: 4rem;
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 12px;
+  font-size: 1.2rem;
+  color: #666666;
+  line-height: 40px;
+  line-height: 4rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+#navigation > ul > li .touch-button {
+  display: inline-block;
+  width: 25%;
+  height: 40px;
+  height: 4rem;
+  color: #e3e3e3;
+  font-size: 14px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+#navigation > ul > li > ul {
+  position: absolute;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  z-index: 2000;
+  top: 40px;
+  top: 4rem;
+}
+#navigation > ul > li > ul li {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  display: block;
+  height: 39px;
+  height: 3.9rem;
+  width: 180px;
+  width: 18rem;
+  margin-bottom: 2px;
+  margin-bottom: 0.2rem;
+}
+#navigation > ul > li > ul li:hover {
+  background-color: #e3e3e3;
+}
+#navigation > ul > li > ul li.leaf {
+  list-style-image: none;
+  list-style-type: none;
+}
+#navigation > ul > li > ul li > a {
+  display: block;
+  height: 39px;
+  height: 3.9rem;
+  width: 90%;
+  padding-left: 10%;
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 12px;
+  font-size: 1.2rem;
+  color: #666666;
+  line-height: 35px;
+  line-height: 3.5rem;
+  text-transform: capitalize;
+}
+
+/**
+* En este partial se establece el esquema de colores
+* default que es la combinacion azul
+**/
+.blk-skycrapper-wrapper {
+  background-color: #006fa6;
+}
+
+.blk-header-wrapper {
+  background-color: whitesmoke;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #00aeef), color-stop(100%, #00aeef)), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ececec), color-stop(100%, #ececec));
+  background-image: -webkit-linear-gradient(#00aeef, #00aeef), -webkit-linear-gradient(#ececec, #ececec);
+  background-image: -moz-linear-gradient(#00aeef, #00aeef), -moz-linear-gradient(#ececec, #ececec);
+  background-image: -o-linear-gradient(#00aeef, #00aeef), -o-linear-gradient(#ececec, #ececec);
+  background-image: linear-gradient(#00aeef, #00aeef), linear-gradient(#ececec, #ececec);
+  background-repeat: repeat-x, repeat-x;
+  background-size: 100% 4em, 100% 0.1em;
+  background-position: 0 0, 0 16em;
+}
+
+.social-header a {
+  color: white;
+}
+.social-header a:hover {
+  color: #136993;
+}
+
+#navigation > ul > li:hover {
+  background-color: #00aeef;
+}
+#navigation > ul > li:hover > a {
+  color: white;
+}
+
+.style-deportes {
+  /**
+  * llmada a mixin que gener a las variaciones de color requiere 2 parametros
+  * el primero el id del color oscuro de la combinacion y el segundo parametro el id del color claro
+  * nota: para saber el id del color checar la guia de estilos
+  **/
+}
+.style-deportes .blk-skycrapper-wrapper {
+  background-color: #307701;
+}
+.style-deportes .blk-header-wrapper {
+  background-color: whitesmoke;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #48b600), color-stop(100%, #48b600)), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ececec), color-stop(100%, #ececec));
+  background-image: -webkit-linear-gradient(#48b600, #48b600), -webkit-linear-gradient(#ececec, #ececec);
+  background-image: -moz-linear-gradient(#48b600, #48b600), -moz-linear-gradient(#ececec, #ececec);
+  background-image: -o-linear-gradient(#48b600, #48b600), -o-linear-gradient(#ececec, #ececec);
+  background-image: linear-gradient(#48b600, #48b600), linear-gradient(#ececec, #ececec);
+  background-repeat: repeat-x, repeat-x;
+  background-size: 100% 4em, 100% 0.1em;
+  background-position: 0 0, 0 16em;
+}
+.style-deportes .social-header a {
+  color: white;
+}
+.style-deportes .social-header a:hover {
+  color: #307701;
+}
+.style-deportes #navigation > ul > li:hover {
+  background-color: #48b600;
+}
+.style-deportes #navigation > ul > li:hover > a {
+  color: white;
+}
+
+.style-estilo {
+  /**
+  * llmada a mixin que gener a las variaciones de color requiere 2 parametros
+  * el primero el id del color oscuro de la combinacion y el segundo parametro el id del color claro
+  * nota: para saber el id del color checar la guia de estilos
+  **/
+}
+.style-estilo .blk-skycrapper-wrapper {
+  background-color: #bd177f;
+}
+.style-estilo .blk-header-wrapper {
+  background-color: whitesmoke;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff39b5), color-stop(100%, #ff39b5)), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ececec), color-stop(100%, #ececec));
+  background-image: -webkit-linear-gradient(#ff39b5, #ff39b5), -webkit-linear-gradient(#ececec, #ececec);
+  background-image: -moz-linear-gradient(#ff39b5, #ff39b5), -moz-linear-gradient(#ececec, #ececec);
+  background-image: -o-linear-gradient(#ff39b5, #ff39b5), -o-linear-gradient(#ececec, #ececec);
+  background-image: linear-gradient(#ff39b5, #ff39b5), linear-gradient(#ececec, #ececec);
+  background-repeat: repeat-x, repeat-x;
+  background-size: 100% 4em, 100% 0.1em;
+  background-position: 0 0, 0 16em;
+}
+.style-estilo .social-header a {
+  color: white;
+}
+.style-estilo .social-header a:hover {
+  color: #bd177f;
+}
+.style-estilo #navigation > ul > li:hover {
+  background-color: #ff39b5;
+}
+.style-estilo #navigation > ul > li:hover > a {
+  color: white;
+}
+
+.style-roja {
+  /**
+  * llmada a mixin que gener a las variaciones de color requiere 2 parametros
+  * el primero el id del color oscuro de la combinacion y el segundo parametro el id del color claro
+  * nota: para saber el id del color checar la guia de estilos
+  **/
+}
+.style-roja .blk-skycrapper-wrapper {
+  background-color: #c82222;
+}
+.style-roja .blk-header-wrapper {
+  background-color: whitesmoke;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff4c4c), color-stop(100%, #ff4c4c)), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ececec), color-stop(100%, #ececec));
+  background-image: -webkit-linear-gradient(#ff4c4c, #ff4c4c), -webkit-linear-gradient(#ececec, #ececec);
+  background-image: -moz-linear-gradient(#ff4c4c, #ff4c4c), -moz-linear-gradient(#ececec, #ececec);
+  background-image: -o-linear-gradient(#ff4c4c, #ff4c4c), -o-linear-gradient(#ececec, #ececec);
+  background-image: linear-gradient(#ff4c4c, #ff4c4c), linear-gradient(#ececec, #ececec);
+  background-repeat: repeat-x, repeat-x;
+  background-size: 100% 4em, 100% 0.1em;
+  background-position: 0 0, 0 16em;
+}
+.style-roja .social-header a {
+  color: white;
+}
+.style-roja .social-header a:hover {
+  color: #c82222;
+}
+.style-roja #navigation > ul > li:hover {
+  background-color: #ff4c4c;
+}
+.style-roja #navigation > ul > li:hover > a {
+  color: white;
+}
+
+.style-cultura {
+  /**
+  * llmada a mixin que gener a las variaciones de color requiere 2 parametros
+  * el primero el id del color oscuro de la combinacion y el segundo parametro el id del color claro
+  * nota: para saber el id del color checar la guia de estilos
+  **/
+}
+.style-cultura .blk-skycrapper-wrapper {
+  background-color: #fe6500;
+}
+.style-cultura .blk-header-wrapper {
+  background-color: whitesmoke;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fe9e00), color-stop(100%, #fe9e00)), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ececec), color-stop(100%, #ececec));
+  background-image: -webkit-linear-gradient(#fe9e00, #fe9e00), -webkit-linear-gradient(#ececec, #ececec);
+  background-image: -moz-linear-gradient(#fe9e00, #fe9e00), -moz-linear-gradient(#ececec, #ececec);
+  background-image: -o-linear-gradient(#fe9e00, #fe9e00), -o-linear-gradient(#ececec, #ececec);
+  background-image: linear-gradient(#fe9e00, #fe9e00), linear-gradient(#ececec, #ececec);
+  background-repeat: repeat-x, repeat-x;
+  background-size: 100% 4em, 100% 0.1em;
+  background-position: 0 0, 0 16em;
+}
+.style-cultura .social-header a {
+  color: white;
+}
+.style-cultura .social-header a:hover {
+  color: #fe6500;
+}
+.style-cultura #navigation > ul > li:hover {
+  background-color: #fe9e00;
+}
+.style-cultura #navigation > ul > li:hover > a {
+  color: white;
+}
+
+.style-permanentes {
+  /**
+  * llmada a mixin que gener a las variaciones de color requiere 2 parametros
+  * el primero el id del color oscuro de la combinacion y el segundo parametro el id del color claro
+  * nota: para saber el id del color checar la guia de estilos
+  **/
+}
+.style-permanentes .blk-skycrapper-wrapper {
+  background-color: #136993;
+}
+.style-permanentes .blk-header-wrapper {
+  background-color: whitesmoke;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #3c99bc), color-stop(100%, #3c99bc)), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ececec), color-stop(100%, #ececec));
+  background-image: -webkit-linear-gradient(#3c99bc, #3c99bc), -webkit-linear-gradient(#ececec, #ececec);
+  background-image: -moz-linear-gradient(#3c99bc, #3c99bc), -moz-linear-gradient(#ececec, #ececec);
+  background-image: -o-linear-gradient(#3c99bc, #3c99bc), -o-linear-gradient(#ececec, #ececec);
+  background-image: linear-gradient(#3c99bc, #3c99bc), linear-gradient(#ececec, #ececec);
+  background-repeat: repeat-x, repeat-x;
+  background-size: 100% 4em, 100% 0.1em;
+  background-position: 0 0, 0 16em;
+}
+.style-permanentes .social-header a {
+  color: white;
+}
+.style-permanentes .social-header a:hover {
+  color: #136993;
+}
+.style-permanentes #navigation > ul > li:hover {
+  background-color: #3c99bc;
+}
+.style-permanentes #navigation > ul > li:hover > a {
+  color: white;
 }

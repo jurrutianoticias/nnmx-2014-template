@@ -1,0 +1,10 @@
+.style-deportes{
+//estilo de la seccion de deportes
+
+/**
+* llmada a mixin que gener a las variaciones de color requiere 2 parametros
+* el primero el id del color oscuro de la combinacion y el segundo parametro el id del color claro
+* nota: para saber el id del color checar la guia de estilos
+**/
+@include estiloSeccion(11, 12);
+}

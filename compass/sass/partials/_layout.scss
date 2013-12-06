@@ -1,17 +1,44 @@
+
 //variables set layout
 
 $containerWidth: 1024px;
-$rowWidth: 5.5; //tamaño de columna
+$columnWidth: 6; //tamaño de columna
 $columns: 12; //numero de columnas
-$gutter: (100 - ($rowWidth * $columns)) / ($columns - 1);
+$gutter: (100 - ($columnWidth * $columns)) / ($columns - 1);
 
-
+//grid system 
 @mixin topContainer() {
   width: $containerWidth;
-  margin: auto;
+  margin: 0 auto;
 }
 
-.top-container {
+.row {
   @include topContainer();
+  @include pie-clearfix;
 
 }
+
+// Select all element that contains class 'col'
+[class*="col"] {
+  float: left;
+  display: inline;
+  min-height: 1px;
+  position: relative;
+  margin-left: 1% * $gutter;
+ 
+  // Get rid of margin from first column
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+
+@for $i from 1 through $columns {
+  .col#{$i} {
+    $colWidth: 1% * ($columnWidth * $i) + ($gutter *($i - 1));
+    width: $colWidth;
+  }
+}
+
+//fin de grid system
+

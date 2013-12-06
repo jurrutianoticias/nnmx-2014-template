@@ -1,0 +1,4 @@
+// esta funcion retorna el color de la paleta de colores dependiendo de su posicion
+@function getColor($num) {
+	@return nth($colores, $num);
+}

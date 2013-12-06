@@ -15,11 +15,21 @@ function nnmx_preprocess_page(&$variables) {
 * Implements hook_preprocess_html().
 */
 function nnmx_preprocess_html(&$vars) {
+//agregar clase a body /*refinar este snippet cuando se definan las secciones*/
+//con este snippet se asignaran las clases para cambio de color por seccion
+//TODO- agregar condicionales para la seleccion de clases adecuadas
+//$vars['classes_array'][] = 'style-deportes';
+//$vars['classes_array'][] = 'style-estilo';
+//$vars['classes_array'][] = 'style-roja';
+//$vars['classes_array'][] = 'style-cultura';
+//$vars['classes_array'][] = 'style-permanentes';
+
 // Move JS files "$scripts" to page bottom for perfs/logic.
 // Add JS files that *needs* to be loaded in the head in a new "$head_scripts" scope.
 // For instance the Modernizr lib.
-$path = drupal_get_path('theme', 'nnmx_responsive');
+$path = drupal_get_path('theme', 'nnmx');
 //drupal_add_js($path . '/js/modernizr.min.js', array('scope' => 'head_scripts', 'weight' => -1, 'preprocess' => FALSE));
+//drupal_add_js($path . '/js/pollyfills/html5shiv.js', array('scope' => 'head_scripts', 'weight' => -1, 'preprocess' => FALSE));
 }
 
 /**

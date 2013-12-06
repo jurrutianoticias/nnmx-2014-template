@@ -19,8 +19,9 @@ regions[blk_footer] = blk footer
 scripts[] = plugins/jquery.hoverIntent.minified.js
 scripts[] = plugins/flexnav/js/jquery.flexnav.min.js
 scripts[] = js/main.js
-
+stylesheets[all][] = stylesheets/normalize.min.css
+stylesheets[all][] = stylesheets/fuentes_icon/styles.css
 stylesheets[screen][] = stylesheets/screen.css
 stylesheets[print][] = stylesheets/print.css
-stylesheets-conditional[lt IE 9][] = stylesheets/ie8.css
+stylesheets-conditional[lt IE 9][all][] = stylesheets/ie8.css
 

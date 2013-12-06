@@ -1,0 +1,72 @@
+#navigation{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	display: block;
+	&>ul{
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		&>li{
+			display: block;
+			float: left;
+			position: relative;
+			margin: 0;
+			padding: 0;
+			@include rems(height, 4);
+			//@include pie-clearfix;
+			a{
+				text-decoration: none;
+			}
+			&>a{
+				display: inline-block;
+				width: 75%;
+				@include rems(height, 4);
+				@include tm;
+				text-align: center;
+			}
+			.touch-button{
+				display: inline-block;
+				width: 25%;
+				@include rems(height, 4);
+				color: getColor(17);
+				@include font-size(1.4);
+				text-align: center;
+			}
+
+			&>ul{
+				position: absolute;
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				z-index: 2000;
+				@include rems(top, 4);
+				li {
+					margin: 0;
+					padding: 0;
+					background-color: getColor(21);
+					display: block;
+					@include rems(height, 3.9);
+					@include rems(width, 18);
+					@include rems(margin-bottom, 0.2);
+
+					&:hover {
+						background-color: getColor(17);
+					}
+
+					&.leaf {
+						list-style-image: none;
+						list-style-type: none;
+					}
+					&>a{
+						display: block;
+						@include rems(height, 3.9);
+						width: 90%;
+						padding-left: 10%;
+						@include tm(submenu);
+					}
+				}
+			}
+		}
+	}
+}

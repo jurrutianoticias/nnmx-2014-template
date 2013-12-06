@@ -72,19 +72,34 @@
  * @ingroup themeable
  */
 ?>
-    <div id="blk-skycrapper-wrapper" class="wrapper">
-      <div id="blk-skycrapper" class="top-container">
-        <div class="cosa2"></div>
+    <div class="blk-skycrapper-wrapper" class="wrapper">
+      <div id="blk-skycrapper" class="row">
       </div>
     </div>
-    <div id="blk-header-wrapper" class="wrapper">
-      <header id="blk-header" class="top-container"><!--inicio del header-->
+    
+    <div class="blk-header-wrapper" class="wrapper">
+      <header id="blk-header" class="row"><!--inicio del header-->
+        <div class="social-header">
+          <a href="<?php echo $GLOBALS['base_path']; ?>">
+            <span class="logo-text"><img src="<?php echo drupal_get_path('theme', 'nnmx'); ?>/images/logo-text.png" atl="noticiasnet.mx" title="noticiasnet.mx" /></span>
+          </a>
+          <a href="#">
+            <span data-icon="n" class="icon social-icons"></span>
+          </a>
+          <a href="#">
+            <span data-icon="t" class="icon social-icons"></span>
+          </a>
+          <a href="#">
+            <span data-icon="r" class="icon social-icons"></span>
+          </a>
+        </div>
         <?php if ($logo): ?>
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
           <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
         </a>
       <?php endif; ?>
-
+      
+      <!-- no es necesario imprimir el site name y el site slogan pero queda como opcion
       <?php if ($site_name || $site_slogan): ?>
         <div id="name-and-slogan">
           <?php if ($site_name): ?>
@@ -102,58 +117,61 @@
           <?php if ($site_slogan): ?>
             <div id="site-slogan"><?php print $site_slogan; ?></div>
           <?php endif; ?>
-        </div> <!-- /#name-and-slogan -->
+        </div>
       <?php endif; ?>
+    -->
 
       <?php if ($main_menu): ?> <?php //menu principal inicio ?>
-      <div class="menu-button">Menu</div>
+      <!--<div class="menu-button">Menu</div>-->
       <nav id="navigation" class="nav-collapse">
         <?php print render($main_menu_expanded); ?>
       </nav> <!-- /.section, /#navigation -->
     <?php endif; ?> <?php //fin menu principal ?>
-
       </header><!--Fin del header-->
     </div>
-    <div id="blk-up-wrapper" class="wrapper">
-      <div id="blk-up" class="top-container">
+
+    <div class="blk-up-wrapper" class="wrapper">
+      <div id="blk-up" class="row">
         <div class="cosa2"></div>
         <?php print render($page['blk_up']); ?>
-      </div>
+      </div><!--fin blk-up -->
     </div>
-    <div id="blk-main-wrapper" class="wrapper">
-      <div id="blk-main" class="top-container">
-        <section id="contenido">
+
+    <div class="blk-main-wrapper" class="wrapper">
+      <div id="blk-main" class="row">
+        <section id="contenido" class="col4">
           <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
           <?php print render($page['help']); ?>
           <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
           <?php print render($page['content']); ?>
         </section>
-        <section id="left-sidebar">
+        <section id="left-sidebar" class="col4">
           <?php print render($page['left_sidebar']); ?>
         </section>
-        <section id="right-sidebar">
+        <section id="right-sidebar" class="col4">
           <?php print render($page['right_sidebar']); ?>
         </section>
-      </div>
+      </div><!--fin blk-main-->
     </div>
-    <div id="blk-middle-pub" class="top-container">
+
+    <div id="blk-middle-pub" class="row">
       <div class="cosa2"></div>
       <?php print render($page['blk_middle_pub']); ?>
     </div>
-    <div id="blk-row-1" class="top-container">
+    <div id="blk-row-1" class="row">
       <div class="cosa2"></div>
       <?php print render($page['blk_row_1']); ?>
     </div>
-    <div id="blk-row-2" class="top-container">
+    <div id="blk-row-2" class="row">
       <div class="cosa2"></div>
       <?php print render($page['blk_row_2']); ?>
     </div>
-    <div id="blk-row-3" class="top-container">
+    <div id="blk-row-3" class="row">
       <div class="cosa2"></div>
       <?php print render($page['blk_row_3']); ?>
     </div>
-    <div id="blk-footer-wrapper" class="wrapper">
-      <div id="blk-footer" class="top-container">
+    <div class="blk-footer-wrapper" class="wrapper">
+      <div id="blk-footer" class="row">
         <div class="cosa2"></div>
         <?php print render($page['blk_footer']); ?>
       </div>

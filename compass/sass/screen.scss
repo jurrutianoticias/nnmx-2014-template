@@ -4,5 +4,49 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 //@import "compass/reset";
-@import "normalize.min.css";
+//@import "normalize.min.css";
+//@import "fuentes_icon/styles.css";
+@import "compass/utilities/general/clearfix";
 @import "partials/layout";
+//variables de estilo *Ej: colores, default values*
+@import "partials/variables";
+//funciones auxiliares 
+@import "partials/functions";
+//snippets predefinidos de codigo reutilizable
+@import "partials/mixins";
+//librerias necesarias de compass
+@import "compass/utilities/general/clearfix";
+@import "compass/utilities/general/hacks";
+@import "compass/css3/shared";
+@import "compass/css3/images";
+@import "compass/css3/box-sizing";
+@import "compass/css3/box-shadow";
+
+/**
+* Los estilos se partiran en diferentes partials para mantener una mejor organizacion de los mismos 
+* aqui solo se llamaran esos partials en el orden especifico para que los estilos funcionen como deben de ser.
+**/
+
+
+//estilos generales del sitio
+@import "partials/generales";
+
+@import "partials/menu";
+
+//estilos de pagina default (azul)
+@import "partials/all-page-template-style";
+
+//estilo de seccion deportes
+@import "partials/all-deportes-template-style";
+
+//estilo de seccion estilo o sociales
+@import "partials/all-estilo-template-style";
+
+//estilo de seccion estilo o sociales
+@import "partials/all-roja-template-style";
+
+//estilo de seccion estilo o sociales
+@import "partials/all-cultura-template-style";
+
+//estilo de seccion estilo o sociales
+@import "partials/all-permanentes-template-style";

@@ -1,18 +1,22 @@
-$p1: #006fa6;
-$p2: #00aeef;
-$p3: #136993;
-$p4: #3c99bc;
-$p5: #bd177f;
-$p6: #ff39b5;
-$p7: #c82222;
-$p8: #ff4c4c;
-$p9: #fe6500;
-$p10: #fe9e00;
-$p11: #307701;
-$p12: #48b600;
-$p13: #004f80;
-$p14: #404040;
-$p15: #666666;
-$p16: #808080;
-$p17: #ffffff;
 
+/**
+*Esta variable alberga la paleta de colores
+*hay que tomar en cuenta que el orden importa
+*si se quisiera cambiar un color ya que esta 
+*variable se utiliza a traves de una funcion 
+*llamada getColor (esta funcion se encuentra 
+*en el partial _functions.scss) que lleva como
+* parametro la la posicion del color en la lista.
+**/
+$colores: #006fa6 #00aeef #136993 #3c99bc #bd177f #ff39b5 #c82222 #ff4c4c #fe6500 #fe9e00 #307701 #48b600 #004f80 #404040 #666666 #808080 #e3e3e3 #ececec #f5f5f5 #faf9f5 #ffffff;
+
+//Variables de tipografia
+
+/**
+*tamaño base para toda la tipografia del sitio en pixeles, 
+*es importante no escribir px ya que con esta variable se 
+*realizan calculos para el resto de las tipografias
+**/
+$baseFontSize: 10;
+
+//las tipografias estan definidas en mixins, si quiere modificarlas en el partial mixin encontrara el apartado tipografia

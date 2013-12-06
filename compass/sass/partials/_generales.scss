@@ -1,0 +1,53 @@
+/**
+*Este partial contiene los estilos generales del sitio
+**/
+html {
+    font-size: $baseFontSize + px;
+}
+
+body  {
+	background-color: getColor(20);
+	margin: auto;
+    min-width: $containerWidth;
+    width: 100%;
+	font-size: $baseFontSize + px;
+}
+
+
+
+/**
+* Para mantener la coherencia en los archivos todos los tamaños
+* fijos de elementos que correspondan al layout seran declarados 
+* aqui dejando en los demas partials de seccion solo el cambio de
+* colores.
+**/
+
+//bloque skycrapper
+#blk-skycrapper {
+	@include rems(height, 10.5);
+}
+
+
+//bloque header
+.blk-header-wrapper {
+	@include box-sizing(border-box);
+	@include box-shadow(getColor(17) 0px 5px 12px);
+}
+//barra social presente en todas las paginas *ël logo en letra y los iconos de redes sociales*
+.social-header {
+    @include rems(height, 4);
+    a{
+    	text-decoration: none;
+    	.logo-text {
+    		@include rems(margin-right, 60);
+    		@include rems(height, 4);
+			display: inline-block;
+			@include box-sizing(border-box);
+			padding: 5px 0px;
+    	}
+    	.social-icons {
+    		@include font-size(2.5);
+    		@include rems(line-height, 2.5);
+    	}
+    }
+}
