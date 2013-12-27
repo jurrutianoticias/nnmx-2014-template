@@ -1,14 +1,14 @@
 
 //variables set layout
 
-$containerWidth: 1024px;
+$containerWidth: 1024;
 $columnWidth: 6; //tamaño de columna
 $columns: 12; //numero de columnas
 $gutter: (100 - ($columnWidth * $columns)) / ($columns - 1);
 
 //grid system 
 @mixin topContainer() {
-  width: $containerWidth;
+  width: $containerWidth + px;
   margin: 0 auto;
 }
 

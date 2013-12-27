@@ -1,9 +1,11 @@
+@import "compass/utilities/general/clearfix";
+@import "partials/layout";
 @import "partials/variables";
 @import "partials/functions";
 @import "partials/mixins";
-@import "compass/utilities/general/clearfix";
 
-body {
+
+body, html {
 	font-size: $baseFontSize + px;
 }
 h1 {
@@ -95,6 +97,18 @@ h3 {
 		.sh2b {
 			@include sh2(bold);
 			display: block;
+		}
+		.parrafo1{
+			@include parrafo;
+			max-width: 300px;
+		}
+		.parrafo2 {
+			@include parrafo(claro);
+			max-width: 300px;
+		}
+		.parrafo3 {
+			@include parrafo(oscuro, true);
+			max-width: 300px;
 		}
 	}
 }

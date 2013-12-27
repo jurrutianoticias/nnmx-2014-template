@@ -20,3 +20,7 @@ $colores: #006fa6 #00aeef #136993 #3c99bc #bd177f #ff39b5 #c82222 #ff4c4c #fe650
 $baseFontSize: 10;
 
 //las tipografias estan definidas en mixins, si quiere modificarlas en el partial mixin encontrara el apartado tipografia
+
+//espaciado entre bloques gutterheight
+
+$gutterHeight: ((($gutter / 100) * $containerWidth) / $baseFontSize);

@@ -5,6 +5,8 @@ version = 7.x-0.1
 core = 7.x
 engine = phptemplate
 
+regions[blk_ad_background_left] = blk ad background left
+regions[blk_ad_background_right] = blk ad background right
 regions[blk_skycrapper] = blk skycrapper
 regions[blk_up] = blk up
 regions[content] = Content

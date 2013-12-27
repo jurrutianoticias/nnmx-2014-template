@@ -1,4 +1,74 @@
 @charset "CP850";
+.row {
+  width: 1024px;
+  margin: 0 auto;
+  *zoom: 1;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+[class*="col"] {
+  float: left;
+  display: inline;
+  min-height: 1px;
+  position: relative;
+  margin-left: 2.54545%;
+}
+[class*="col"]:first-child {
+  margin-left: 0;
+}
+
+.col1 {
+  width: 6%;
+}
+
+.col2 {
+  width: 14.54545%;
+}
+
+.col3 {
+  width: 23.09091%;
+}
+
+.col4 {
+  width: 31.63636%;
+}
+
+.col5 {
+  width: 40.18182%;
+}
+
+.col6 {
+  width: 48.72727%;
+}
+
+.col7 {
+  width: 57.27273%;
+}
+
+.col8 {
+  width: 65.81818%;
+}
+
+.col9 {
+  width: 74.36364%;
+}
+
+.col10 {
+  width: 82.90909%;
+}
+
+.col11 {
+  width: 91.45455%;
+}
+
+.col12 {
+  width: 100%;
+}
+
 /**
 *Esta variable alberga la paleta de colores
 *hay que tomar en cuenta que el orden importa
@@ -23,7 +93,7 @@
 * por lo tanto con llamar este mixin en cada seccion con 
 * diferente combinacion de colores es suficiente.
 **/
-body {
+body, html {
   font-size: 10px;
 }
 
@@ -316,26 +386,41 @@ h3 {
 .tipografia div .sh1d {
   font-family: Arial;
   font-weight: bold;
-  font-size: 10px;
-  font-size: 1rem;
+  font-size: 15px;
+  font-size: 1.5rem;
   color: gray;
   display: block;
   background-color: #ececec;
 }
+.tipografia div .sh1d a {
+  text-decoration: none;
+  color: inherit;
+}
+.tipografia div .sh1d a:hover {
+  text-decoration: none;
+}
 .tipografia div .sh1l {
   font-family: Arial;
   font-weight: bold;
-  font-size: 10px;
-  font-size: 1rem;
+  font-size: 15px;
+  font-size: 1.5rem;
   color: white;
   display: block;
   background-color: gray;
 }
+.tipografia div .sh1l a {
+  text-decoration: none;
+  color: inherit;
+}
+.tipografia div .sh1l a:hover {
+  text-decoration: none;
+}
 .tipografia div .sh2n {
   font-family: "Times New Roman";
+  font-weight: normal;
   color: #004f80;
-  font-size: 13px;
-  font-size: 1.3rem;
+  font-size: 18px;
+  font-size: 1.8rem;
   display: block;
 }
 .tipografia div .sh2n a {
@@ -347,9 +432,10 @@ h3 {
 }
 .tipografia div .sh2d {
   font-family: "Times New Roman";
+  font-weight: normal;
   color: #004f80;
-  font-size: 18px;
-  font-size: 1.8rem;
+  font-size: 28px;
+  font-size: 2.8rem;
   display: block;
 }
 .tipografia div .sh2d a {
@@ -361,10 +447,11 @@ h3 {
 }
 .tipografia div .sh2b {
   font-family: "Times New Roman";
+  font-weight: normal;
   color: #004f80;
   font-weight: bold;
-  font-size: 11px;
-  font-size: 1.1rem;
+  font-size: 14px;
+  font-size: 1.4rem;
   display: block;
 }
 .tipografia div .sh2b a {
@@ -373,4 +460,26 @@ h3 {
 }
 .tipografia div .sh2b a:hover {
   color: #00aeef;
+}
+.tipografia div .parrafo1 {
+  font-size: 12px;
+  font-size: 1.2rem;
+  font-family: Arial;
+  color: #404040;
+  max-width: 300px;
+}
+.tipografia div .parrafo2 {
+  font-size: 12px;
+  font-size: 1.2rem;
+  font-family: Arial;
+  color: gray;
+  max-width: 300px;
+}
+.tipografia div .parrafo3 {
+  font-size: 12px;
+  font-size: 1.2rem;
+  font-family: Arial;
+  color: #404040;
+  font-weight: bold;
+  max-width: 300px;
 }

@@ -16,30 +16,88 @@
 *Apartado de tipografias definidas para el sitio
 **/
 
+@mixin h1() {
+	font-family: "Times New Roman";
+	@include font-size(3.5);
+	color: getColor(13);
+}
+
+@mixin h2 {
+	font-family: "Times New Roman";
+	font-size: 2.6em;
+	color: getColor(13);
+}
+
+@mixin h3 {
+	font-family: Arial;
+	font-size: 2.1em;
+	color: getColor(14);
+}
+
+//parrafos
+@mixin parrafo($tipo: oscuro, $bold: false, $tam: 1.2){
+	@include font-size($tam);
+	font-family: Arial;
+	@if $tipo == oscuro {
+		color: getColor(14);
+	} @else if $tipo == claro {
+		color: getColor(16);
+	}
+	@if $bold == true {
+		font-weight: bold;
+	}
+	
+}
+
+@mixin links($color: getColor(16), $hover: getColor(13), $tam: 1.2, $td: true) {
+	@include font-size($tam);
+	color: $color;
+	text-decoration: none;
+	&:hover {
+		color: $hover;
+		@if $td == true {
+			text-decoration: underline;
+		}
+	}
+}
+
 //heading principal (h1) de las secciones el parametro puede tener valor light o dark 
 
-@mixin sh1($sel: dark) {
+@mixin sh1($sel: dark, $decoration: false) {
 	font-family: Arial;
 	font-weight: bold;
-	@include font-size(1);
+	@include font-size(1.5);
 	@if $sel == dark {
 		color: getColor(16);
 	} @else if $sel == light {
 		color: getColor(21);
 	}
-
+	a {
+		text-decoration: none;	
+		color: inherit;
+		&:hover {
+			@if $decoration == false {
+			text-decoration: none;	
+			} @else if $decoration == true{
+				text-decoration: underline;
+			}
+		}
+	}
 }
 
 @mixin sh2($sel: normal) {
 	font-family: "Times New Roman";
+	font-weight: normal;
 	color: getColor(13);
 	@if $sel == normal{
-		@include font-size(1.3);
-	} @else if $sel == destacado {
 		@include font-size(1.8);
+	} @else if $sel == destacado {
+		@include font-size(2.8);
 	} @else if $sel == bold {
 		font-weight: bold;
-		@include font-size(1.1);
+		@include font-size(1.4);
+	} @else if $sel == subtitle {
+		@include font-size(1.3);
 	}
 	a {
 		text-decoration: none;
@@ -65,23 +123,7 @@
 	}
 
 }
-@mixin h1() {
-	font-family: "Times New Roman";
-	@include font-size(3.5);
-	color: getColor(13);
-}
 
-@mixin h2 {
-	font-family: "Times New Roman";
-	font-size: 2.6em;
-	color: getColor(13);
-}
-
-@mixin h3 {
-	font-family: Arial;
-	font-size: 2.1em;
-	color: getColor(14);
-}
 
 
 /**
@@ -128,6 +170,12 @@
 					& > a {
 						color: getColor(21);
 					}
+				}
+			}
+			.active-trail {
+			background-color: getColor($color2);
+				& > a {
+					color: getColor(21);
 				}
 			}
 		}

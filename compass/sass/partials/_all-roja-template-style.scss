@@ -7,4 +7,139 @@
 * nota: para saber el id del color checar la guia de estilos
 **/
 @include estiloSeccion(7, 8);
+
+//estilos opcionales con pestaña de color
+.secciones {
+    .view-header {
+        h1 {
+            @include sh1(light);
+            background-color: getColor(8);
+        }
+    }
+}
+
+.destacamos {
+    & > h1{
+        @include sh1(light);
+        background-color: getColor(8);
+    }
+}
+
+
+//color de cada seccion inferior
+
+.seccion-inferior-default {
+    .view-header {
+        h1 {
+            @include sh1(light);
+            background-color: getColor(2);
+        }
+    }
+    ul {
+        li {
+            span {
+                &:hover {
+                    color: getColor(21);
+                    background-color: getColor(2);
+                }
+            }
+        }
+    }
+}
+
+.seccion-inferior-permanentes {
+    .view-header {
+        h1 {
+            @include sh1(light);
+            background-color: getColor(4);
+        }
+    }
+    ul {
+        li {
+            span {
+                &:hover {
+                    color: getColor(21);
+                    background-color: getColor(4);
+                }
+            }
+        }
+    }
+}
+
+.seccion-inferior-deportes {
+    .view-header {
+        h1 {
+            @include sh1(light);
+            background-color: getColor(12);
+        }
+    }
+    ul {
+        li {
+            span {
+                &:hover {
+                    color: getColor(21);
+                    background-color: getColor(12);
+                }
+            }
+        }
+    }
+}
+
+.seccion-inferior-fama {
+    .view-header {
+        h1 {
+            @include sh1(light);
+            background-color: getColor(6);
+        }
+    }
+    ul {
+        li {
+            span {
+                &:hover {
+                    color: getColor(21);
+                    background-color: getColor(6);
+                }
+            }
+        }
+    }
+}
+
+.seccion-inferior-arte {
+    .view-header {
+        h1 {
+            @include sh1(light);
+            background-color: getColor(10);
+        }
+    }
+    ul {
+        li {
+            span {
+                &:hover {
+                    color: getColor(21);
+                    background-color: getColor(10);
+                }
+            }
+        }
+    }
+}
+
+.seccion-inferior-roja {
+    .view-header {
+        h1 {
+            @include sh1(light);
+            background-color: getColor(8);
+        }
+    }
+    ul {
+        li {
+            span {
+                &:hover {
+                    color: getColor(21);
+                    background-color: getColor(8);
+                }
+            }
+        }
+    }
+}
+
 }

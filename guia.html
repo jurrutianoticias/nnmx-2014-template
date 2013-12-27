@@ -75,6 +75,10 @@
 				<span class="sh1d">SECTION H1 DARK</span>
 				<span class="sh1l">SECTION H1 LIGHT</span>
 				<pre>
+/*para que el peso semantico sea 
+correcto y no interfiera con el h1 
+principal debe de ir dentro de un 
+section*/
 font-family: "Times New Roman";
 font-size: 14px; //legacy support
 font-size: 1.4rem;
@@ -85,23 +89,27 @@ color: #ffffff;
 				</pre>
 			</div>
 			<div>
-				<span class="sh2b">Section h2 bold</span>
-				<span class="sh2n">Section h2 normal</span>
-				<span class="sh2d">Section h2 destacado</span>
-				<span class="sh2d"><a href="#">Section h2 link</a></span>
+				<span class="sh2b">Section h1 bold</span>
+				<span class="sh2n">Section h1 normal</span>
+				<span class="sh2d">Section h1 destacado</span>
+				<span class="sh2d"><a href="#">Section h1 link</a></span>
 				<pre>
+/*para que el peso semantico sea 
+correcto debe de ir dentro de un 
+section o de un article*/
+
 font-family: "Times New Roman";
 color: #004f80;
 //bold
 font-weight: bold;
-font-size: 11px; //legacy support
-font-size: 1.1rem;
-//normal
-font-size: 13px; //legacy support
-font-size: 1.3rem;
-//normal
 font-size: 18px; //legacy support
 font-size: 1.8rem;
+//normal
+font-size: 28px; //legacy support
+font-size: 2.8rem;
+//normal
+font-size: 14px; //legacy support
+font-size: 1.4rem;
 // si es un link
 text-decoration: none;
 color: inherit;
@@ -109,6 +117,23 @@ color: inherit;
 	color: #00aeef;
 
 
+				</pre>
+			</div>
+			<div>
+				<p class="parrafo1">parrafo oscuro: Ejemplo de parrafo oscuro que se utiliza por ejemplo en las notas destacadas</p>
+				<p class="parrafo2">parrafo claro: Ejemplo de parrafo claro que se utiliza por ejemplo en las notas mas vistas</p>
+				<p class="parrafo3">parrafo oscuro o claro bold: Ejemplo de parrafo bold que se utiliza por ejemplo en el bloque de especiales</p>
+				<pre>
+font-size: 12px;/*legacy support*/
+font-size: 1.2rem;
+font-family: Arial;
+//oscuro
+color: #404040;
+//claro
+color: gray;
+//bold
+color: #404040 o gray;
+font-weight: bold;
 				</pre>
 			</div>
 			<div>

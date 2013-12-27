@@ -72,16 +72,26 @@
  * @ingroup themeable
  */
 ?>
-    <div class="blk-skycrapper-wrapper" class="wrapper">
+
+
+<div id="blk-ad-background-left" class="ad-background">
+  <?php print render($page['blk_ad_background_left']); ?>
+</div>
+<div id="blk-ad-background-right" class="ad-background">
+  <?php print render($page['blk_ad_background_right']); ?>
+</div>
+
+    <div class="blk-skycrapper-wrapper wrapper">
       <div id="blk-skycrapper" class="row">
+        <?php print render($page['blk_skycrapper']); ?>
       </div>
     </div>
     
-    <div class="blk-header-wrapper" class="wrapper">
+    <div class="blk-header-wrapper wrapper">
       <header id="blk-header" class="row"><!--inicio del header-->
         <div class="social-header">
           <a href="<?php echo $GLOBALS['base_path']; ?>">
-            <span class="logo-text"><img src="<?php echo drupal_get_path('theme', 'nnmx'); ?>/images/logo-text.png" atl="noticiasnet.mx" title="noticiasnet.mx" /></span>
+            <span class="logo-text"><img src="<?php echo $GLOBALS['base_path'] . drupal_get_path('theme', 'nnmx'); ?>/images/logo-text.png" atl="noticiasnet.mx" title="noticiasnet.mx" /></span>
           </a>
           <a href="#">
             <span data-icon="n" class="icon social-icons"></span>
@@ -95,7 +105,7 @@
         </div>
         <?php if ($logo): ?>
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+          <img class="main-logo" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
         </a>
       <?php endif; ?>
       
@@ -130,27 +140,38 @@
       </header><!--Fin del header-->
     </div>
 
-    <div class="blk-up-wrapper" class="wrapper">
+    <?php if($page['blk_up']): ?>
+    <div class="blk-up-wrapper wrapper">
       <div id="blk-up" class="row">
-        <div class="cosa2"></div>
         <?php print render($page['blk_up']); ?>
       </div><!--fin blk-up -->
     </div>
+    <?php endif; ?>
 
-    <div class="blk-main-wrapper" class="wrapper">
+    <!--drupal Status messages-->
+    <div class="status-messages"><?php print $messages ?></div>
+    <!--fin drupal status messages-->
+    
+    <div class="blk-main-wrapper wrapper">
+      <div class="row">
+        <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
+        <?php print render($page['help']); ?>
+        <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+      </div>
       <div id="blk-main" class="row">
-        <section id="contenido" class="col4">
-          <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
-          <?php print render($page['help']); ?>
-          <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+        <section id="contenido" class="<?php print nnmx_check_sidebars($page['left_sidebar'], $page['right_sidebar']); ?>">
           <?php print render($page['content']); ?>
-        </section>
+        </section><!--fin contenido-->
+        <?php if($page['left_sidebar']): ?>
         <section id="left-sidebar" class="col4">
           <?php print render($page['left_sidebar']); ?>
         </section>
+        <?php endif; ?>
+        <?php if($page['right_sidebar']): ?>
         <section id="right-sidebar" class="col4">
           <?php print render($page['right_sidebar']); ?>
         </section>
+        <?php endif; ?>
       </div><!--fin blk-main-->
     </div>
 
@@ -159,20 +180,16 @@
       <?php print render($page['blk_middle_pub']); ?>
     </div>
     <div id="blk-row-1" class="row">
-      <div class="cosa2"></div>
       <?php print render($page['blk_row_1']); ?>
     </div>
     <div id="blk-row-2" class="row">
-      <div class="cosa2"></div>
       <?php print render($page['blk_row_2']); ?>
     </div>
     <div id="blk-row-3" class="row">
-      <div class="cosa2"></div>
       <?php print render($page['blk_row_3']); ?>
     </div>
-    <div class="blk-footer-wrapper" class="wrapper">
+    <div class="blk-footer-wrapper wrapper">
       <div id="blk-footer" class="row">
-        <div class="cosa2"></div>
         <?php print render($page['blk_footer']); ?>
       </div>
     </div>

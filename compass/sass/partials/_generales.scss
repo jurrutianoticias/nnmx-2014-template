@@ -13,7 +13,9 @@ body  {
 	font-size: $baseFontSize + px;
 }
 
-
+p {
+    @include parrafo;
+}
 
 /**
 * Para mantener la coherencia en los archivos todos los tamaños
@@ -21,8 +23,28 @@ body  {
 * aqui dejando en los demas partials de seccion solo el cambio de
 * colores.
 **/
+//bloque ad-background
+.ad-background {
+    width: 300px;
+    height: 900px;
+    position: fixed;
+}
+
+#blk-ad-background-left {
+    left: 50%;
+    margin-left: ((($containerWidth / 2) + 310) * -1) + px;
+}
+
+#blk-ad-background-right {
+    left: 50%;
+    margin-left: (($containerWidth / 2) + 10) + px;
+}
+
 
 //bloque skycrapper
+.blk-skycrapper-wrapper {
+    background-color: getColor(1);
+}
 #blk-skycrapper {
 	@include rems(height, 10.5);
 }
@@ -32,12 +54,19 @@ body  {
 .blk-header-wrapper {
 	@include box-sizing(border-box);
 	@include box-shadow(getColor(17) 0px 5px 12px);
+    background-color: getColor(19);
+    @include background-image(linear-gradient(getColor(2), getColor(2)), linear-gradient(getColor(18), getColor(18)));
+    background-repeat: repeat-x, repeat-x;
+    background-size: 100% 4em, 100% 0.1em;
+    background-position: 0 0, 0 16em;
 }
+
 //barra social presente en todas las paginas *ël logo en letra y los iconos de redes sociales*
 .social-header {
     @include rems(height, 4);
     a{
     	text-decoration: none;
+        color: getColor(21);
     	.logo-text {
     		@include rems(margin-right, 60);
     		@include rems(height, 4);
@@ -49,5 +78,528 @@ body  {
     		@include font-size(2.5);
     		@include rems(line-height, 2.5);
     	}
+        &:hover {
+            color: getColor(3);
+        }
     }
 }
+//estilo logo
+#logo {
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+//colores del menu
+#navigation{
+    &>ul{
+        &>li{
+            &:hover {
+                background-color: getColor(2);
+                & > a {
+                    color: getColor(21);
+                }
+            }
+        }
+        .active-trail {
+            background-color: getColor(2);
+            & > a {
+                color: getColor(21);
+            }
+        }
+    }
+}
+
+
+/**
+* Estilos del bloque main
+**/
+
+
+//paginador completo
+.item-list{
+    .pager {
+        @include rems(margin-top, 2);
+        @include rems(margin-bottom, 2);
+        display: block;
+        height: 100%;
+        li {
+            a {
+                @include tm();
+            }
+        }
+        .pager-current {
+            @include tm();
+            background-color: getColor(2);
+            color: getColor(21);
+        }
+    }
+}
+
+.item-list .pager li a {
+font-family: Arial;
+font-weight: bold;
+font-size: 12px;
+font-size: 1.2rem;
+color: #666666;
+line-height: 40px;
+line-height: 4rem;
+text-transform: uppercase;
+}
+
+.secciones {
+    @include rems(margin-bottom, $gutterHeight);
+    @include single-box-shadow(getColor(16), 0, 7px, 13px, -6px);
+    background-color: getColor(21);
+    border: solid 1px getColor(17);
+
+    article {
+        h1 {
+            @include sh1(dark, true);
+            margin: 0;
+            @include rems(padding, 0.8);
+        }
+        p {
+            margin: 0;
+            @include rems(padding-top, 0);
+            @include rems(padding-bottom, 1);
+            @include rems(padding-left, 0.8);
+            @include rems(padding-right, 0.8);
+        }
+
+    }
+
+    .view-header {
+        h1 {
+            @include sh1;
+            background-color: getColor(17);
+            text-transform: uppercase;
+            @include rems(padding-left, 1);
+            @include rems(padding-top, .4);
+            @include rems(padding-bottom, .4);
+            @include rems(padding-right, .4);
+            margin: 0;
+        }
+    }
+
+    .item-list {
+        .pager {
+            padding-left: 9%;
+            text-align: left;
+            margin: 0;
+            @include rems(margin-bottom, .75);
+            @include rems(height, 2.7);
+
+            li {
+                width: 30%;
+                margin: 0;
+                padding: 0;
+                display: inline-block;
+            }
+            .pager-previous {
+                a{
+                    display: inline-block;
+                    width: 35px;
+                    height: 23px;
+                    background: url(../images/flechas-menos.png) top no-repeat;
+                }
+            }
+            .pager-current {
+                visibility:hidden;
+            }
+            .pager-next {
+                text-align: right;
+                a{
+                    display: inline-block;
+                    width: 35px;
+                    height: 23px;
+                    background: url(../images/flechas-mas.png) top no-repeat;
+                }
+            }
+        }        
+    }
+}
+//estilo contenido destacado de pagina principal
+.destacamos {
+    & > h1{
+        @include sh1;
+        background-color: getColor(17);
+        text-transform: uppercase;
+        @include rems(padding-left, 1);
+        @include rems(padding-top, .4);
+        @include rems(padding-bottom, .4);
+        @include rems(padding-right, .4);
+        margin: 0;
+    }
+    div{
+        article {
+            @include rems(padding-top, 1);
+            @include rems(padding-left, 1);
+            @include rems(padding-right, 1);
+            padding-bottom: 0;
+            h1 {
+                @include sh2;
+                padding: 0;
+                @include rems(margin-top, .4);
+                @include rems(margin-bottom, .4);
+                @include rems(padding-left, .8);
+                @include background-image(url(../images/punto_destacamos.png));
+                background-repeat: no-repeat;
+                background-position: 0 .4em;
+            }
+            p {
+                padding: 0;
+                @include rems(margin-top, .6);
+                @include rems(margin-bottom, .6);
+                @include rems(padding-left, .8);
+            }
+            &:first-child{
+                h1 {
+                    @include sh2(destacado);
+                    background-position: 0 .5em;
+                }
+            }
+            &:last-child{
+                @include rems(padding-bottom, 1);
+            }
+            ul {
+                margin-bottom: 0;
+                list-style-type: circle;
+                @include rems(padding-left, 2);
+                color: getColor(16);
+                a{
+                    @include links;
+                }
+            }
+        }
+    }
+        
+}
+
+//estilo foto del dia
+.foto-del-dia {
+    width: 208%;
+    @include rems(height, 43.5);
+    article {
+        &>a{
+            display: block;
+            height: 378px;
+        }
+        h1 {
+            @include font-size(1.7);
+        }
+        p {
+            padding-bottom: 0;
+        }
+    }
+}
+
+//Estilos para los loques centrales (central superior, central inferior)
+.central-blocks {
+    article {
+       /* h1 {
+            @include sh2(bold);
+        }*/
+    }
+}
+.notiahora {
+    ul {
+        li {
+            @include rems(margin-right, 1.5);
+            color: getColor(2);
+        }
+        h1 {
+            @include sh2(bold);
+        }
+        span {
+            @include links(getColor(16), getColor(16));
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+//relleno de right sidebar donde aparece la foto del dia
+.page-inicio, .page-oaxaca, .page-oaxaca-deporte, .page-oaxaca-fama, .page-oaxaca-arte,
+.page-cuenca, .page-cuenca-deporte, .page-cuenca-fama, .page-cuenca-arte,
+.page-chiapas, .page-chiapas-deporte, .page-chiapas-fama, .page-chiapas-arte,
+.page-istmo, .page-istmo-deporte, .page-istmo-fama, .page-istmo-arte, {
+    #right-sidebar {
+        @include rems(padding-top, 43.5 + $gutterHeight);
+    }
+}
+.page-oaxaca-rojas, .page-cuenca-rojas, .page-chiapas-rojas, .page-istmo-rojas, 
+.page-oaxaca-opiniones, .page-cuenca-opiniones, .page-chiapas-opiniones, .page-istmo-opiniones {
+    #right-sidebar {
+        @include rems(padding-top, 0);
+    }
+}
+
+
+//estilos del bloque lo mas visto
+.lo-mas-visto {
+    article {
+        @include pie-clearfix;
+        border-bottom: solid getColor(17) 1px;
+        h1 {
+            @include sh2(bold);
+        }
+
+        .lomas {
+            float: left;
+        }
+        .lomas-left {
+            padding: 2%;
+            width: 40%;
+            a {
+                display: block;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        .lomas-right{
+            width: 54%;
+            padding-right: 2%;
+        }
+    }
+}
+
+//estilo de listas ejemplo nacional, mundo, blogs, etc.
+
+.listas {
+    article {
+        position: relative;
+        background: getColor(21);
+        @include rems(margin-top, 2);
+        @include rems(margin-bottom, 2);
+        border: solid getColor(17) 1px;
+        @include pie-clearfix;
+        h1 {
+            @include sh2();
+        }
+        span {
+            @include sh2(subtitle);
+        }
+        p {
+            @include rems(margin-right, 1);
+        }
+    }
+    .lista-block {
+        display: block;
+        float: left;
+    }
+    .lista-left-block {
+        width: 40%;
+        text-align: center;
+        vertical-align: top;
+        padding: 0;
+        @include rems(padding-top, 2);
+        @include rems(padding-bottom, 2);
+    }
+    .lista-right-block {
+        width: 60%;
+    }
+    .lista-link {
+        position: absolute;
+        bottom: 0;
+        width: 15%;
+        margin-left: 85%;
+        text-align: center;
+        a {
+            @include rems(height, 3.5);
+            @include tm();
+            display: block;
+            text-decoration: none;
+            background-color: getColor(2);
+            color: getColor(21);
+        }
+    }
+}
+
+
+//estilos opcionales con pestaña de color
+.secciones {
+    .view-header {
+        h1 {
+            @include sh1(light);
+            background-color: getColor(2);
+        }
+    }
+}
+
+.destacamos {
+    & > h1{
+        @include sh1(light);
+        background-color: getColor(2);
+    }
+}
+
+
+
+
+//secciones inferiores
+
+.seccion-inferior {
+    @include rems(height, 36.8);
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        li{
+            &>a {
+                display: none;
+            }
+            span {
+                @include sh1();
+                display: block;
+                @include rems(padding, .8);
+                @include rems(padding-left, 2);
+                &:hover {
+                    color: getColor(21);
+                    background-color: getColor(2);
+                }
+
+            }
+            &:first-child {
+                &>a {
+                    display: block;
+                    padding: 0;
+                    margin: 0;
+                    @include rems(height, 13.2);
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//estilo edicion digital
+.ed-digital {
+    #views_slideshow_cycle_teaser_section_ediciondigital-ed_digital, #views_slideshow_cycle_teaser_section_ediciondigital-ed_digital_main {
+        margin:auto;
+    }
+}
+
+//color de cada seccion inferior
+
+.seccion-inferior-default {
+    .view-header {
+        h1 {
+            @include sh1(light);
+            background-color: getColor(2);
+        }
+    }
+    ul {
+        li {
+            span {
+                &:hover {
+                    color: getColor(21);
+                    background-color: getColor(2);
+                }
+            }
+        }
+    }
+}
+
+.seccion-inferior-permanentes {
+    .view-header {
+        h1 {
+            @include sh1(light);
+            background-color: getColor(4);
+        }
+    }
+    ul {
+        li {
+            span {
+                &:hover {
+                    color: getColor(21);
+                    background-color: getColor(4);
+                }
+            }
+        }
+    }
+}
+
+.seccion-inferior-deportes {
+    .view-header {
+        h1 {
+            @include sh1(light);
+            background-color: getColor(12);
+        }
+    }
+    ul {
+        li {
+            span {
+                &:hover {
+                    color: getColor(21);
+                    background-color: getColor(12);
+                }
+            }
+        }
+    }
+}
+
+.seccion-inferior-fama {
+    .view-header {
+        h1 {
+            @include sh1(light);
+            background-color: getColor(6);
+        }
+    }
+    ul {
+        li {
+            span {
+                &:hover {
+                    color: getColor(21);
+                    background-color: getColor(6);
+                }
+            }
+        }
+    }
+}
+
+.seccion-inferior-arte {
+    .view-header {
+        h1 {
+            @include sh1(light);
+            background-color: getColor(10);
+        }
+    }
+    ul {
+        li {
+            span {
+                &:hover {
+                    color: getColor(21);
+                    background-color: getColor(10);
+                }
+            }
+        }
+    }
+}
+
+.seccion-inferior-roja {
+    .view-header {
+        h1 {
+            @include sh1(light);
+            background-color: getColor(8);
+        }
+    }
+    ul {
+        li {
+            span {
+                &:hover {
+                    color: getColor(21);
+                    background-color: getColor(8);
+                }
+            }
+        }
+    }
+}
+
+
+
