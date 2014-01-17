@@ -83,6 +83,29 @@ en ciertas ocaciones puede estar erronea y para no afectar el SEO no se puede ca
         break;
       }
     }
+  } else {
+    $temp_node = node_load(arg(1));
+    if(!empty($temp_node->field_edicion))
+    foreach($temp_node->field_edicion['und'] as $item) {
+      switch($item['taxonomy_term']->name) {
+        case 'Deportes':
+          $vars['classes_array'][] = 'style-deportes';
+          $vars['logo'] = $GLOBALS['base_path'] . drupal_get_path('theme', 'nnmx') . '/images/verde.png';
+        break;
+        case 'Fama':
+          $vars['classes_array'][] = 'style-estilo';
+          $vars['logo'] = $GLOBALS['base_path'] . drupal_get_path('theme', 'nnmx') . '/images/rosa.png';
+        break;
+        case 'Cultura':
+          $vars['classes_array'][] = 'style-cultura';
+          $vars['logo'] = $GLOBALS['base_path'] . drupal_get_path('theme', 'nnmx') . '/images/naranja.png';
+        break;
+        case 'Roja':
+          $vars['classes_array'][] = 'style-roja';
+          $vars['logo'] = $GLOBALS['base_path'] . drupal_get_path('theme', 'nnmx') . '/images/roja.png';
+        break;
+      }
+    }
   }
 
 
@@ -121,3 +144,62 @@ function nnmx_check_sidebars($sb1, $sb2) {
 }
 
 
+//funcion custom breadcrumbs para el sitio
+function nnmx_breadcrums() {
+  $output = '<div class="breadcrumbs"><a href="' . url() . '">Inicio</a><span> >> </span>';
+  if (arg(0) == 'node' && is_numeric(arg(1))) {
+    $temp_node = node_load(arg(1));
+    if(!empty($temp_node->field_edicion))
+      $crumbs_raw = array();
+      foreach($temp_node->field_edicion['und'] as $item) {
+        array_push($crumbs_raw, $item['taxonomy_term']->name);
+      }
+      if(in_array('Oaxaca', $crumbs_raw)) {
+        $output .= '<a href="' . url('oaxaca') . '">Oaxaca</a><span> >> </span>';
+        if(in_array('Deportes', $crumbs_raw)) {
+          $output .= '<a href="' . url('oaxaca/deporte') . '">Deportes</a><span> >> </span>';
+        } elseif(in_array('Fama', $crumbs_raw)) {
+          $output .= '<a href="' . url('oaxaca/fama') . '">Estilo</a><span> >> </span>';
+        } elseif(in_array('Cultura', $crumbs_raw)) {
+          $output .= '<a href="' . url('oaxaca/arte') . '">Cultura</a><span> >> </span>';
+        } elseif(in_array('Roja', $crumbs_raw)) {
+          $output .= '<a href="' . url('oaxaca/rojas') . '">Roja</a><span> >> </span>';
+        }
+      } elseif(in_array('Cuenca', $crumbs_raw)) {
+        $output .= '<a href="' . url('cuenca') . '">Cuenca</a><span> >> </span>';
+        if(in_array('Deportes', $crumbs_raw)) {
+          $output .= '<a href="' . url('cuenca/deporte') . '">Deportes</a><span> >> </span>';
+        } elseif(in_array('Fama', $crumbs_raw)) {
+          $output .= '<a href="' . url('cuenca/fama') . '">Sociales</a><span> >> </span>';
+        } elseif(in_array('Cultura', $crumbs_raw)) {
+          $output .= '<a href="' . url('cuenca/arte') . '">Cultura</a><span> >> </span>';
+        } elseif(in_array('Roja', $crumbs_raw)) {
+          $output .= '<a href="' . url('cuenca/rojas') . '">Roja</a><span> >> </span>';
+        }
+      } elseif(in_array('Chiapas', $crumbs_raw)) {
+        $output .= '<a href="' . url('chiapas') . '">Chiapas</a><span> >> </span>';
+        if(in_array('Deportes', $crumbs_raw)) {
+          $output .= '<a href="' . url('chiapas/deporte') . '">Deportes</a><span> >> </span>';
+        } elseif(in_array('Fama', $crumbs_raw)) {
+          $output .= '<a href="' . url('chiapas/fama') . '">Sociales</a><span> >> </span>';
+        } elseif(in_array('Cultura', $crumbs_raw)) {
+          $output .= '<a href="' . url('chiapas/arte') . '">Cultura</a><span> >> </span>';
+        } elseif(in_array('Roja', $crumbs_raw)) {
+          $output .= '<a href="' . url('chiapas/rojas') . '">Roja</a><span> >> </span>';
+        }
+      } elseif(in_array('Istmo', $crumbs_raw)) {
+        $output .= '<a href="' . url('istmo') . '">Istmo</a><span> >> </span>';
+        if(in_array('Deportes', $crumbs_raw)) {
+          $output .= '<a href="' . url('istmo/deporte') . '">Deportes</a><span> >> </span>';
+        } elseif(in_array('Fama', $crumbs_raw)) {
+          $output .= '<a href="' . url('istmo/fama') . '">Sociales</a><span> >> </span>';
+        } elseif(in_array('Cultura', $crumbs_raw)) {
+          $output .= '<a href="' . url('istmo/arte') . '">Cultura</a><span> >> </span>';
+        } elseif(in_array('Roja', $crumbs_raw)) {
+          $output .= '<a href="' . url('istmo/rojas') . '">Roja</a><span> >> </span>';
+        }
+      }
+  }
+  $output .= '<span>' . $temp_node->title . '</span></div>';
+  return $output;
+}

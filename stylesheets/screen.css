@@ -111,7 +111,7 @@ html {
 body {
   background-color: #faf9f5;
   margin: auto;
-  min-width: 1024;
+  min-width: 1024px;
   width: 100%;
   font-size: 10px;
 }
@@ -218,6 +218,10 @@ p {
 }
 #navigation > ul .active-trail > a {
   color: white;
+}
+
+.cse .gsc-control-cse, .gsc-control-cse {
+  padding: 0 !important;
 }
 
 /**
@@ -869,6 +873,126 @@ p {
   background-color: #ff4c4c;
 }
 
+.block-quicktabs {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 368px;
+  height: 36.8rem;
+}
+
+#carrusel-wrapper {
+  margin-top: 26.06545px;
+  margin-top: 2.60655rem;
+}
+
+.carrusel-item {
+  -webkit-box-shadow: 0 7px 13px -6px gray;
+  -moz-box-shadow: 0 7px 13px -6px gray;
+  box-shadow: 0 7px 13px -6px gray;
+  background-color: white;
+  border: solid 1px #e3e3e3;
+}
+.carrusel-item h1 {
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 15px;
+  font-size: 1.5rem;
+  color: gray;
+  font-size: 15px;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 8px;
+  padding: 0.8rem;
+  height: 18px;
+  height: 1.8rem;
+}
+.carrusel-item h1 a {
+  text-decoration: none;
+  color: inherit;
+}
+.carrusel-item h1 a:hover {
+  text-decoration: underline;
+}
+
+.carrusel-nota > span, .carrusel-video > span {
+  height: 35px;
+  height: 3.5rem;
+  font-size: 35px;
+  font-size: 3.5rem;
+  color: gray;
+  margin: 0;
+  padding: 0;
+  display: block;
+  line-height: 0;
+  text-align: right;
+}
+
+.carrusel-nota-inner-wrapper > p > a {
+  margin-left: 8px;
+  margin-left: 0.8rem;
+  margin-top: 10px;
+  margin-top: 1rem;
+  font-size: 14px;
+  font-size: 1.4rem;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.carrusel-publicidad > span {
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 15px;
+  font-size: 1.5rem;
+  color: gray;
+  font-size: 15px;
+  font-size: 1.5rem;
+  margin: 0;
+  display: block;
+  height: 22px;
+  height: 2.2rem;
+  padding-left: 8px;
+  padding-left: 0.8rem;
+  padding-top: 4px;
+  padding-top: 0.4rem;
+}
+.carrusel-publicidad > span a {
+  text-decoration: none;
+  color: inherit;
+}
+.carrusel-publicidad > span a:hover {
+  text-decoration: underline;
+}
+
+.carrusel-pager-wrapper {
+  padding-top: 10px;
+  padding-top: 1rem;
+  padding-bottom: 6px;
+  padding-bottom: 0.6rem;
+  text-align: center;
+}
+.carrusel-pager-wrapper span {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  width: 13px;
+  width: 1.3rem;
+  height: 13px;
+  height: 1.3rem;
+  margin-left: 15px;
+  margin-left: 1.5rem;
+  background-color: #e3e3e3;
+}
+.carrusel-pager-wrapper span:first-child {
+  margin-left: 0;
+}
+.carrusel-pager-wrapper .carrusel-pager-select {
+  background-color: #00aeef;
+}
+
 #navigation {
   margin: 0;
   padding: 0;
@@ -1145,6 +1269,9 @@ p {
   color: white;
   background-color: #ff4c4c;
 }
+.style-deportes .carrusel-pager-wrapper .carrusel-pager-select {
+  background-color: #48b600;
+}
 
 .style-estilo {
   /**
@@ -1329,6 +1456,9 @@ p {
   color: white;
   background-color: #ff4c4c;
 }
+.style-estilo .carrusel-pager-wrapper .carrusel-pager-select {
+  background-color: #ff39b5;
+}
 
 .style-roja {
   /**
@@ -1511,6 +1641,9 @@ p {
 }
 .style-roja .seccion-inferior-roja ul li span:hover {
   color: white;
+  background-color: #ff4c4c;
+}
+.style-roja .carrusel-pager-wrapper .carrusel-pager-select {
   background-color: #ff4c4c;
 }
 
@@ -1697,6 +1830,9 @@ p {
   color: white;
   background-color: #ff4c4c;
 }
+.style-cultura .carrusel-pager-wrapper .carrusel-pager-select {
+  background-color: #fe9e00;
+}
 
 .style-permanentes {
   /**
@@ -1850,4 +1986,7 @@ p {
 .style-permanentes .seccion-inferior-roja ul li span:hover {
   color: white;
   background-color: #ff4c4c;
+}
+.style-permanentes .carrusel-pager-wrapper .carrusel-pager-select {
+  background-color: #3c99bc;
 }

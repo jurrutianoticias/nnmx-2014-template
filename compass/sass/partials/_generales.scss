@@ -8,7 +8,7 @@ html {
 body  {
 	background-color: getColor(20);
 	margin: auto;
-    min-width: $containerWidth;
+    min-width: $containerWidth + px;
     width: 100%;
 	font-size: $baseFontSize + px;
 }
@@ -110,6 +110,10 @@ p {
     }
 }
 
+//Estilos de fecha y search
+.cse .gsc-control-cse, .gsc-control-cse {
+    padding: 0 !important;
+}
 
 /**
 * Estilos del bloque main
@@ -602,4 +606,85 @@ text-transform: uppercase;
 }
 
 
+//quicktabs ejemplo clima-encuesta block
 
+.block-quicktabs {
+    @include box-sizing(border-box);
+    @include rems(height, 36.8);
+}
+
+
+
+//estilos de carrusel
+
+#carrusel-wrapper {
+    @include rems(margin-top, $gutterHeight);
+}
+.carrusel-item {
+    @include single-box-shadow(getColor(16), 0, 7px, 13px, -6px);
+    background-color: getColor(21);
+    border: solid 1px getColor(17);
+    h1 {
+        @include sh1(dark, true);
+        @include font-size(1.5);
+        margin: 0;
+        @include rems(padding, 0.8);
+        @include rems(height, 1.8);   
+    }
+}
+.carrusel-nota, .carrusel-video {
+    & > span {
+        @include rems(height, 3.5);
+        @include font-size(3.5);
+        color: getColor(16);
+        margin: 0;
+        padding: 0;
+        display: block;  
+        line-height: 0;
+        text-align: right;    
+    }
+}
+
+.carrusel-nota-inner-wrapper {
+    & > p {
+        & > a {
+            @include rems(margin-left, .8);
+            @include rems(margin-top, 1);
+            @include font-size(1.4);
+            display: block;
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+}
+
+.carrusel-publicidad {
+    & > span {
+        @include sh1(dark, true);
+        @include font-size(1.5);
+        margin: 0;
+        display: block;
+        @include rems(height, 2.2);
+        @include rems(padding-left, 0.8);
+        @include rems(padding-top, 0.4);
+    }
+}
+
+.carrusel-pager-wrapper {
+    @include rems(padding-top, 1);
+    @include rems(padding-bottom, 0.6);
+    text-align: center;
+    span {
+        @include border-radius(50%);
+        @include rems(width, 1.3);
+        @include rems(height, 1.3);
+        @include rems(margin-left, 1.5);
+        background-color: getColor(17);
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+    .carrusel-pager-select {
+        background-color: getColor(2);
+    }
+}

@@ -44,14 +44,25 @@
  */
 ?>
 <!DOCTYPE html>
-<html xml:lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>">
+<html xml:lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>" xmlns:fb="http://ogp.me/ns/fb#">
   <head>
+    <meta property="fb:app_id" content="136377713069821"/>
     <?php print $head; ?>
     <title><?php print $head_title; ?></title>
     <?php print $styles; ?>
     <?php print $head_scripts; ?>
   </head>
   <body class="<?php print $classes; ?>" <?php print $attributes;?>>
+  <!-- codigo de facebook -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- Fin de codigo de facebook-->
   <div id="skip-link">
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
   </div>
