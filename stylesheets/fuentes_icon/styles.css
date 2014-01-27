@@ -38,14 +38,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-paperplane:before {
+  content: "a";
+}
 .icon-audio-2:before {
   content: "m";
 }
+.icon-clima-1:before {
+  content: "c";
+}
+.icon-encuesta-1:before {
+  content: "e";
+}
 .icon-facebook-1:before {
   content: "n";
-}
-.icon-login-1:before {
-  content: "o";
 }
 .icon-logo-1:before {
   content: "p";
@@ -67,4 +73,13 @@
 }
 .icon-youtube-1:before {
   content: "v";
+}
+.icon-login-1:before {
+  content: "o";
+}
+.icon-logout-1:before {
+  content: "d";
+}
+.icon-lock-1:before {
+  content: "f";
 }

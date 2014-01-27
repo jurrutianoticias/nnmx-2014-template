@@ -10,3 +10,49 @@
 	background-image: url(../images/barra-azul-patron.jpg);
 	background-repeat: repeat-x;
 }
+
+.style-cultura{
+	//background image header *linea azul claro*
+	.blk-header-wrapper {
+		background-image: url(../images/barra-amarillo-patron.jpg);
+		background-repeat: repeat-x;
+	}
+}
+
+.style-deportes{
+	//background image header *linea azul claro*
+	.blk-header-wrapper {
+		background-image: url(../images/barra-verde-patron.jpg);
+		background-repeat: repeat-x;
+	}
+}
+
+.style-estilo{
+	//background image header *linea azul claro*
+	.blk-header-wrapper {
+		background-image: url(../images/barra-rosa-patron.jpg);
+		background-repeat: repeat-x;
+	}
+}
+
+.style-permanentes{
+	//background image header *linea azul claro*
+	.blk-header-wrapper {
+		background-image: url(../images/barra-azul-palido-patron.jpg);
+		background-repeat: repeat-x;
+	}
+}
+
+.style-roja{
+	//background image header *linea azul claro*
+	.blk-header-wrapper {
+		background-image: url(../images/barra-rojo-patron.jpg);
+		background-repeat: repeat-x;
+	}
+}
+
+.carrusel-nota-inner-wrapper{
+	&>p{
+		background: url(../images/fondo-teaser.png);
+	}
+} 

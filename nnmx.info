@@ -8,6 +8,7 @@ engine = phptemplate
 regions[blk_ad_background_left] = blk ad background left
 regions[blk_ad_background_right] = blk ad background right
 regions[blk_skycrapper] = blk skycrapper
+regions[blk_carrusel] = blk carrusel
 regions[blk_up] = blk up
 regions[content] = Content
 regions[left_sidebar] = left sidebar
@@ -25,5 +26,5 @@ stylesheets[all][] = stylesheets/normalize.min.css
 stylesheets[all][] = stylesheets/fuentes_icon/styles.css
 stylesheets[screen][] = stylesheets/screen.css
 stylesheets[print][] = stylesheets/print.css
-stylesheets-conditional[lt IE 9][all][] = stylesheets/ie8.css
+stylesheets-conditional[lte IE 9][all][] = stylesheets/ie8.css
 

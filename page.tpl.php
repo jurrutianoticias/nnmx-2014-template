@@ -93,14 +93,32 @@
           <a href="<?php echo $GLOBALS['base_path']; ?>">
             <span class="logo-text"><img src="<?php echo $GLOBALS['base_path'] . drupal_get_path('theme', 'nnmx'); ?>/images/logo-text.png" atl="noticiasnet.mx" title="noticiasnet.mx" /></span>
           </a>
-          <a href="#">
-            <span data-icon="n" class="icon social-icons"></span>
+          <?php if(!user_is_logged_in()): ?>
+          <a href="#" class="login-icon" title="login">
+            <span data-icon="o" class="icon social-icons"></span>
+            <div class="login-form-wrapper">
+              <div class="login-form secciones">
+                <?php print render($custom_login_form); ?>
+              </div>
+            </div>
           </a>
-          <a href="#">
-            <span data-icon="t" class="icon social-icons"></span>
+          <?php endif; ?>
+          <?php if(user_is_logged_in()): ?>
+          <a href="<?php echo base_path(); ?>user/logout" title="logout" target="_blank">
+            <span data-icon="f" class="icon social-icons"></span>
           </a>
-          <a href="#">
-            <span data-icon="r" class="icon social-icons"></span>
+          <?php endif; ?>
+          <a href="https://www.facebook.com/pages/Noticiasnetmx/131129766930048" target="_blank">
+            <span data-icon="n" class="icon social-icons" title="facebook"></span>
+          </a>
+          <a href="https://twitter.com/noticiasnetmx" target="_blank">
+            <span data-icon="t" class="icon social-icons" title="twitter"></span>
+          </a>
+          <a href="http://www.youtube.com/user/noticiasnetmx2012" target="_blank">
+            <span data-icon="v" class="icon social-icons" title="youtube"></span>
+          </a>
+          <a href="<?php echo $GLOBALS['base_path']; ?>rss.xml" target="_blank">
+            <span data-icon="r" class="icon social-icons" title="rss"></span>
           </a>
         </div>
         <?php if ($logo): ?>
@@ -139,16 +157,17 @@
     <?php endif; ?> <?php //fin menu principal ?>
       </header><!--Fin del header-->
     </div>
-
-    <?php if($page['blk_up']): ?>
-    <div class="blk-up-wrapper wrapper">
-      <div id="blk-up" class="row">
-        <?php print render($page['blk_up']); ?>
-      </div><!--fin blk-up -->
+    <?php if($page['blk_carrusel']): ?>
+    <div class="blk-carrusel-wrapper wrapper">
+      <div id="blk-carrusel" class="row">
+        <?php print render($page['blk_carrusel']); ?>
+      </div><!--fin blk-carrusel -->
     </div>
     <?php endif; ?>
+
+
     <?php //bloque de busqueda y fecha actual ?>
-    <div class="row">
+    <div class="date-search-block row">
       <div class="col6 date">
         <?php echo format_date(time(), 'long'); ?>
       </div>
@@ -168,6 +187,15 @@
         <gcse:search></gcse:search>
       </div>
     </div>
+
+
+    <?php if($page['blk_up']): ?>
+    <div class="blk-up-wrapper wrapper">
+      <div id="blk-up" class="row">
+        <?php print render($page['blk_up']); ?>
+      </div><!--fin blk-up -->
+    </div>
+    <?php endif; ?>
     <!--drupal Status messages-->
     <div class="status-messages"><?php print $messages ?></div>
     <!--fin drupal status messages-->
@@ -212,4 +240,15 @@
       <div id="blk-footer" class="row">
         <?php print render($page['blk_footer']); ?>
       </div>
+      <span class="separador-linea"></span>
+      <footer class="row brand">
+      <nav id="permanentes" class="clearfix">
+        <?php print render($menu_permanentes); ?>
+      </nav>
+      <img src="<?php echo $GLOBALS['base_path'] . drupal_get_path('theme', 'nnmx'); ?>/images/nmx.png" />
+      <p>NOTICIAS Voz e Imagen© y NOTICIASnet© son marcas registradas de Editorial Golfo Pacífico, S.A. de C.V. y/o una de sus empresas filiales.
+Todos los derechos reservados® Portal oficial del Grupo Noticias Voz e Imagen de Oaxaca, Tuxtepec, Chiapas.</p>
+      <p>www.noticiasnet.mx</p>
+      </footer>
+      <div class="footer-color"></div>
     </div>

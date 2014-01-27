@@ -80,37 +80,79 @@
  * @ingroup themeable
  */
 ?>
+<?php // breadcrums custom see template.php ?>
+<?php print nnmx_breadcrums(); ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
+<?php //titulo del video ?>
 <h1><?php echo $title; ?></h1>
-  <?php print $user_picture; ?>
+<?php //autores del video ?>
+<?php if(!empty($content['field_autores']['#items'][0]['value'])): ?>
+<h3><?php print render($content['field_autores']); ?></h3>
+<?php endif; ?>
+<?php //fecha de publicacion ?>
+<time><?php print $date; ?></time>
+<?php //slideshow de fotos ?>
+<?php if(!empty($content['field_youtube']['#items'])): ?>
+<div class="video">
+  <?php print render($content['field_youtube']); ?>
+</div>
+<?php endif; ?>
 
-  <?php print render($title_prefix); ?>
-  <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-  <?php endif; ?>
-  <?php print render($title_suffix); ?>
-
-  <?php if ($display_submitted): ?>
-    <div class="submitted">
-      <?php print $submitted; ?>
+<div class="social-bar clearfix">
+	<div class="comment-count"><!--Contador de comentarios-->
+		<fb:comments-count href=<?php echo url('', array('absolute' => TRUE)) . current_path(); ?>></fb:comments-count><span> comentarios</span>
+	</div>
+	<div class="like-button"><!-- Boton like de facebook -->
+		<fb:like href="<?php echo url('', array('absolute' => TRUE)) . current_path(); ?>" send="false" width="20" show_faces="true" action="like" layout="button_count"></fb:like>
+	</div>
+	<div class="twittear-button"><!--boton de twittear-->
+        <a href="https://twitter.com/share" class="twitter-share-button" data-lang="es" data-related="noticiasnetmx">Twittear</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     </div>
-  <?php endif; ?>
+    <div class="plus-one"><!--plus one button-->
+		<div class="g-plusone" data-size="medium"></div>
+		<script type="text/javascript">
+		  window.___gcfg = {lang: 'es-419'};
 
-  <div class="content"<?php print $content_attributes; ?>>
-    <?php //cuerpo ?>
-    <?php print format_string($node->body[LANGUAGE_NONE][0]['value']); ?>
-    <?php
-      // We hide the comments and links now so that we can render them later.
-      hide($content['body']);
-      hide($content['comments']);
-      hide($content['links']);
-      print render($content);
-    ?>
-  </div>
+		  (function() {
+		    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		    po.src = 'https://apis.google.com/js/plusone.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		  })();
+		</script>
+    </div>
+    <?php if(!empty($content['links']['statistics'])): ?>
+    <div class="statistics"><!--Estadisticas del nodo-->
+		<?php print render($content['links']['statistics']); ?>
+    </div>
+	<?php endif; ?>
+</div><!--fin barra social-->
 
-  <?php print render($content['links']); ?>
-
-  <?php print render($content['comments']); ?>
-
+<div class="video">
+  <?php //cuerpo ?>
+  <?php print format_string($node->body[LANGUAGE_NONE][0]['value']); ?>
+</div>
 </article>
+<div class="pub_bottom clearfix">
+	<div class="pub_bottom_left">
+		<?php
+		//imprimimos el anuncio desde la referencia del modulo DFP 
+		$pub_bottom_left = dfp_serve_external_data('add-ContLeftAll-300x250', 'node');
+		if(count($pub_bottom_left) > 0) {
+			print $pub_bottom_left[0];
+		}
+		?>
+	</div>
+	<div class="pub_bottom_right">
+		<?php
+		//imprimimos el anuncio desde la referencia del modulo DFP 
+		$pub_bottom_right = dfp_serve_external_data('add-ContRightAll-300x250', 'node');
+		if(count($pub_bottom_right) > 0) {
+			print $pub_bottom_right[0];
+		}
+		?>
+	</div>
+</div>
+<div class="comentarios">
+	<fb:comments href="<?php echo url('', array('absolute' => TRUE)) . current_path(); ?>" width="674" num_posts="4"></fb:comments>
+</div>

@@ -71,4 +71,5 @@
   <?php print $page_bottom; ?>
   <?php print $scripts; ?>
   </body>
+  <!--Author: Ing. Jose Manuel Santibañez Villanueva para www.noticiasnet.mx-->
 </html>

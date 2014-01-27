@@ -1,0 +1,190 @@
+.breadcrumbs {
+	@include font-size(1.3);
+	color: getColor(16);
+	a {
+		@include links(getColor(1), getColor(2), 1.3, true);
+	}
+}
+
+.node {
+	& > h1{
+        @include sh2(destacado);
+        @include rems(margin-bottom, .5);
+    }
+    & > h2 {
+    	@include sh1();
+    	@include rems(margin-bottom, .5);
+    	@include rems(margin-top, .5);
+    }
+    & > h3 {
+    	@include sh1();
+    	@include font-size(1.2);
+    	@include rems(margin-bottom, .5);
+    	@include rems(margin-top, .5);
+    }
+    time {
+    	@include sh1();
+    	@include font-size(1.1);
+    	@include rems(margin-bottom, 1);
+    	display: block;
+    }
+
+    .numeralia {
+    	width: 27%;
+		float: left;
+		margin: 0% 2% 2% 0;
+		p {
+			@include links(getColor(16), getColor(16), 1.3, false);
+			margin-left: 4%;
+			margin-right: 4%;
+		}
+    }
+    .galeria {
+    	.field {
+    		position: relative;
+    		.field-slideshow-pager {
+    			display: inline-block;
+				position: absolute;
+				top: 88%;
+				z-index: 3000;
+				left: 3%;
+				a {
+					display: inline-block;
+					@include rems(width, 2.3);
+					@include rems(height, 2.3);
+					text-align: center;
+					background: getColor(21);
+					@include border-radius(50%);
+					color: getColor(2);
+					@include rems(line-height, 2.3);
+					@include rems(margin-right, .8);
+					@include font-size(1.3);
+					text-decoration: none;
+					font-weight: bold;
+					&.activeSlide {
+						color: getColor(21);
+						background: getColor(2);
+					}
+					&:hover {
+						color: getColor(21);
+						background: getColor(2);
+					}
+				}
+
+    		}
+    	}
+
+    }
+
+    .nota {
+		@include rems(padding-left, 1);
+	}
+
+	.video {
+		@include rems(padding-left, 1);
+	}
+	.blog {
+		@include rems(padding-left, 1);
+	}
+
+
+}//fin clase nodo
+
+//publicidad inferior
+.pub_bottom {
+   	@include rems(margin-bottom, $gutterHeight);
+   	& > div{
+		float: left;
+		width: 50%;
+		& > div {
+			margin: auto;
+		}
+  	}
+}
+
+//barra social
+.social-bar {
+	background-color: getColor(19);
+	border: solid 1px getColor(17);
+	text-align: center;
+	& > div {
+		display: inline-block;
+		margin: 1%;
+		vertical-align: top;
+	}
+	.comment-count {
+		background-color: #acd478;
+		@include rems(padding, .4);
+		border: solid 2px #6e9334;
+		color: getColor(21);
+		@include font-size(1.3);
+		font-weight: bold;
+	}
+	.like-button {
+
+	}
+	.twittear-button {
+		@include rems(max-width, 10);
+	}
+	.plus-one {
+		@include rems(max-width, 7);
+	}
+	.statistics {
+		background-color: getColor(20);
+		@include rems(padding, .4);
+		border: groove 2px getColor(17);
+		@include font-size(1.3);
+		font-weight: bold;
+	}
+}
+//barra social cuando el ancho (width) es mayor a 1150px
+.social-bar-side{
+	position: absolute;
+	width: 111px;
+	left: -120px;
+	top: 0;
+	text-align: left;
+	.comment-count {
+		@include rems(margin, 0.3);
+		@include rems(margin-top, 1.5);
+		@include rems(margin-bottom, 1.5);
+		@include rems(padding, 1);
+		@include font-size(2);
+		text-align: center;
+		& > span {
+			display: block;
+			@include font-size(1.3);
+		}
+	}
+	.like-button {
+		@include rems(margin, 0.3);
+		@include rems(margin-bottom, 1.5);
+	}
+	.twittear-button {
+		@include rems(margin, 0.3);
+		@include rems(margin-bottom, 1.5);
+	}
+	.plus-one {
+		@include rems(margin, 0.3);
+		@include rems(margin-bottom, 1.5);
+	}
+	.statistics {
+		@include rems(margin, 0.3);
+		@include rems(margin-bottom, 1.5);
+	}
+}
+
+//estilo nodo--page
+.node-page {
+	@include rems(padding, 2);
+	.ilustracion {
+		float: left;
+		@include rems(margin-right, 2);
+		@include rems(margin-bottom, 2);
+	}
+	h1 {
+		@include sh2(destacado);
+		margin: 0;
+        @include rems(margin-bottom, .5);
+	}
+}

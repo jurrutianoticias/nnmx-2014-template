@@ -86,21 +86,28 @@
 <?php //titulo de la nota ?>
 <h1><?php echo $title; ?></h1>
 <?php //balazo de la nota ?>
+<?php if(!empty($content['field_balazo']['#items'][0]['value'])): ?>
 <h2><?php print render($content['field_balazo']); ?></h2>
+<?php endif; ?>
 <?php //autores de la nota ?>
+<?php if(!empty($content['field_autores']['#items'][0]['value'])): ?>
 <h3><?php print render($content['field_autores']); ?></h3>
+<?php endif; ?>
+<?php //fecha de publicacion ?>
 <time><?php print $date; ?></time>
+<?php //slideshow de fotos ?>
+<?php if(!empty($content['field_nota_foto']['#items'])): ?>
 <div class="galeria">
-  <?php //slideshow de fotos ?>
   <?php print render($content['field_nota_foto']); ?>
 </div>
+<?php endif; ?>
 
-<div class="social-bar">
+<div class="social-bar clearfix">
 	<div class="comment-count"><!--Contador de comentarios-->
-		<fb:comments-count href=<?php echo url('', array('absolute' => TRUE)) . current_path(); ?>></fb:comments-count>
-	<div>
+		<fb:comments-count href=<?php echo url('', array('absolute' => TRUE)) . current_path(); ?>></fb:comments-count><span> comentarios</span>
+	</div>
 	<div class="like-button"><!-- Boton like de facebook -->
-		<fb:like href="<?php echo url('', array('absolute' => TRUE)) . current_path(); ?>"></fb:like>
+		<fb:like href="<?php echo url('', array('absolute' => TRUE)) . current_path(); ?>" send="false" width="20" show_faces="true" action="like" layout="button_count"></fb:like>
 	</div>
 	<div class="twittear-button"><!--boton de twittear-->
         <a href="https://twitter.com/share" class="twitter-share-button" data-lang="es" data-related="noticiasnetmx">Twittear</a>
@@ -126,16 +133,18 @@
 </div><!--fin barra social-->
 
 <div class="nota">
-  <div class="numeralia">
-    <?php //numeralia ?>
-    <span class="n-title">Numeralia</span>
-    <?php print format_string($node->field_numeralia[LANGUAGE_NONE][0]['value']); ?>
-  </div>
+	<?php //numeralia ?>
+  <?php if(!empty($node->field_numeralia[LANGUAGE_NONE][0]['value'])): ?>
+	  <div class="numeralia secciones">
+	    <div class="view-header"><h1>Numeralia</h1></div>
+	    <?php print format_string($node->field_numeralia[LANGUAGE_NONE][0]['value']); ?>
+	  </div>
+  <?php endif; ?>
   <?php //cuerpo ?>
   <?php print format_string($node->body[LANGUAGE_NONE][0]['value']); ?>
 </div>
 </article>
-<div class="pub_bottom">
+<div class="pub_bottom clearfix">
 	<div class="pub_bottom_left">
 		<?php
 		//imprimimos el anuncio desde la referencia del modulo DFP 

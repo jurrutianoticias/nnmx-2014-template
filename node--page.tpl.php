@@ -80,37 +80,18 @@
  * @ingroup themeable
  */
 ?>
-<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-<h1><?php echo $title; ?></h1>
-  <?php print $user_picture; ?>
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix secciones"<?php print $attributes; ?>>
 
-  <?php print render($title_prefix); ?>
-  <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-  <?php endif; ?>
-  <?php print render($title_suffix); ?>
 
-  <?php if ($display_submitted): ?>
-    <div class="submitted">
-      <?php print $submitted; ?>
-    </div>
-  <?php endif; ?>
 
   <div class="content"<?php print $content_attributes; ?>>
+    <div class="ilustracion">
+      <?php print render($content['field_page_image']); ?>
+    </div>
+    <h1><?php echo $title; ?></h1>
     <?php //cuerpo ?>
     <?php print format_string($node->body[LANGUAGE_NONE][0]['value']); ?>
-    <?php
-      // We hide the comments and links now so that we can render them later.
-      hide($content['body']);
-      hide($content['comments']);
-      hide($content['links']);
-      print render($content);
-    ?>
   </div>
-
-  <?php print render($content['links']); ?>
-
-  <?php print render($content['comments']); ?>
 
 </article>

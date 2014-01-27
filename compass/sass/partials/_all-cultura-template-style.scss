@@ -150,5 +150,65 @@
 }
 
 
+//colores por estilo para nodo
+.breadcrumbs {
+    a {
+        @include links(getColor(9), getColor(10), 1.3, true);
+    }
 }
+
+.node {
+    .galeria {
+        .field {
+            .field-slideshow-pager {
+                a {
+                    color: getColor(10);
+                    &.activeSlide {
+                        background: getColor(10);
+                        color: getColor(21);
+                    }
+                    &:hover {
+                        background: getColor(10);
+                        color: getColor(21);
+                    }
+                }
+
+            }
+        }
+
+    }
+}
+
+//estilo noton submit
+.form-submit {
+    background: getColor(10);
+}
+
+//slider especial chica color del boton
+//estilos del bloque especiales 
+.especiales-chica {
+    .views-slideshow-controls-text-previous {
+        a {
+            background-color: getColor(10);
+        }
+    }
+    .views-slideshow-controls-text-next {
+        a {
+            background-color: getColor(10);
+        }
+    }
+}
+
+//fix border en el bloque reproductor
+.reproductor {
+    border-color: getColor(10);
+}
+
+.footer-color {
+    background: getColor(10);
+}
+
+}//fin de la clase de estilo
+
+
 

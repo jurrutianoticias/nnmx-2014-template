@@ -1,9 +1,1 @@
-/* Welcome to Compass. Use this file to write IE specific override styles.
- * Import this file using the following HTML or equivalent:
- * <!--[if IE]>
- *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
- * <![endif]--> */
-.blk-header-wrapper {
-  background-image: url(../images/barra-azul-patron.jpg);
-  background-repeat: repeat-x;
-}
+.blk-header-wrapper{background-image:url(../images/barra-azul-patron.jpg);background-repeat:repeat-x}.style-cultura .blk-header-wrapper{background-image:url(../images/barra-amarillo-patron.jpg);background-repeat:repeat-x}.style-deportes .blk-header-wrapper{background-image:url(../images/barra-verde-patron.jpg);background-repeat:repeat-x}.style-estilo .blk-header-wrapper{background-image:url(../images/barra-rosa-patron.jpg);background-repeat:repeat-x}.style-permanentes .blk-header-wrapper{background-image:url(../images/barra-azul-palido-patron.jpg);background-repeat:repeat-x}.style-roja .blk-header-wrapper{background-image:url(../images/barra-rojo-patron.jpg);background-repeat:repeat-x}.carrusel-nota-inner-wrapper>p{background:url(../images/fondo-teaser.png)}
