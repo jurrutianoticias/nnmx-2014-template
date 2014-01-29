@@ -17,6 +17,65 @@ p {
     @include parrafo;
 }
 
+//actions links de todo el portal
+.action-links {
+    li {
+        a {
+            @include links();
+        }
+    }
+}
+
+//tabs ejemplo las tabs administrativas que aparecen en la parte superior de cualquier nodo con links directos a edicion o rastreo
+ul {
+    &.primary {
+        @include font-size(1.4);
+        border-bottom: 1px solid getColor(16);
+        li {
+            a {
+                background-color: getColor(17);
+                color: getColor(16);
+                font-weight: bold;
+                border-color: getColor(17);
+            }
+            &.active {
+                a {
+                    background-color: getColor(2);
+                    color: getColor(21);
+                    border-color: getColor(2);
+                }
+            }
+        }
+    }
+}
+
+//user profile style
+.profile {
+    color: getColor(13);
+    .user-picture {
+        float: left;
+        @include rems(margin-right, 2);
+        @include rems(margin-bottom, 1);
+    }
+    h3 {
+        color: getColor(14);
+        @include font-size(1.8);
+    }
+    dt {
+        color: getColor(2);
+        @include font-size(1.5);
+    }
+    dd {
+        color: getColor(16);
+        @include font-size(1.3);
+        a {
+            @include links();
+        }
+    }
+
+} 
+
+
 /**
 * Para mantener la coherencia en los archivos todos los tamaños
 * fijos de elementos que correspondan al layout seran declarados 
@@ -996,7 +1055,7 @@ text-transform: uppercase;
 .separador-linea {
     margin: auto;
     @include rems(margin-top, 5);
-    background: url(../images/barra.png) center;
+    background: url(../images/barra.png) center no-repeat;
     display: block;
     width: 100%;
     height: 1px;

@@ -8,6 +8,20 @@
 **/
 @include estiloSeccion(7, 8);
 
+//tabs ejemplo las tabs administrativas que aparecen en la parte superior de cualquier nodo con links directos a edicion o rastreo
+ul {
+    &.primary {
+        li {
+            &.active {
+                a {
+                    background-color: getColor(8);
+                    border-color: getColor(8);
+                }
+            }
+        }
+    }
+}
+
 //estilos opcionales con pestaña de color
 .secciones {
     .view-header {

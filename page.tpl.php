@@ -104,7 +104,7 @@
           </a>
           <?php endif; ?>
           <?php if(user_is_logged_in()): ?>
-          <a href="<?php echo base_path(); ?>user/logout" title="logout" target="_blank">
+          <a href="<?php echo base_path(); ?>user/logout" title="logout">
             <span data-icon="f" class="icon social-icons"></span>
           </a>
           <?php endif; ?>

@@ -106,7 +106,7 @@ en ciertas ocaciones puede estar erronea y para no afectar el SEO no se puede ca
     }
   } else {
     $temp_node = node_load(arg(1));
-    if(!empty($temp_node->field_edicion)) {
+    if(!empty($temp_node->field_edicion) && count($temp_node->field_edicion['und']) > 0 && !arg(2)) {//fix
       foreach($temp_node->field_edicion['und'] as $item) {
         switch($item['taxonomy_term']->name) {
           case 'Deportes':
@@ -176,7 +176,7 @@ function nnmx_breadcrums() {
   $output = '<div class="breadcrumbs"><a href="' . url() . '">Inicio</a><span> » </span>';
   if (arg(0) == 'node' && is_numeric(arg(1))) {
     $temp_node = node_load(arg(1));
-    if(!empty($temp_node->field_edicion))
+    if(!empty($temp_node->field_edicion) && count($temp_node->field_edicion['und']) > 0)
       $crumbs_raw = array();
       foreach($temp_node->field_edicion['und'] as $item) {
         array_push($crumbs_raw, $item['taxonomy_term']->name);

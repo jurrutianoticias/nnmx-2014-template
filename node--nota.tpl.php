@@ -89,6 +89,10 @@
 <?php if(!empty($content['field_balazo']['#items'][0]['value'])): ?>
 <h2><?php print render($content['field_balazo']); ?></h2>
 <?php endif; ?>
+<?php //sumario de la nota ?>
+<?php if(!empty($content['field_sumario']['#items'][0]['value'])): ?>
+<h3><?php print render($content['field_sumario']); ?></h3>
+<?php endif; ?>
 <?php //autores de la nota ?>
 <?php if(!empty($content['field_autores']['#items'][0]['value'])): ?>
 <h3><?php print render($content['field_autores']); ?></h3>
