@@ -28,6 +28,18 @@
     	@include rems(margin-bottom, 1);
     	display: block;
     }
+.node-nota {
+	& > h1{
+        @include sh2(destacado);
+        @include rems(margin-bottom, .5);
+        @include rems(margin-top, .5);
+    }
+    & > h2 {
+    	@include sh1();
+    	@include rems(margin-bottom, .5);
+    	@include rems(margin-top, 1.5);
+    }
+}
 
     .numeralia {
     	width: 27%;
