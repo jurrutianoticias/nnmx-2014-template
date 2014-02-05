@@ -83,12 +83,12 @@
 <?php // breadcrums custom see template.php ?>
 <?php print nnmx_breadcrums(); ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-<?php //titulo de la nota ?>
-<h1><?php echo $title; ?></h1>
 <?php //balazo de la nota ?>
 <?php if(!empty($content['field_balazo']['#items'][0]['value'])): ?>
 <h2><?php print render($content['field_balazo']); ?></h2>
 <?php endif; ?>
+<?php //titulo de la nota ?>
+<h1><?php echo $title; ?></h1>
 <?php //sumario de la nota ?>
 <?php if(!empty($content['field_sumario']['#items'][0]['value'])): ?>
 <h3><?php print render($content['field_sumario']); ?></h3>
